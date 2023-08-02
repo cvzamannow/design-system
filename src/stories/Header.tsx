@@ -1,7 +1,6 @@
 import React from 'react';
 import StorybookHeader from './header.styles';
 import { Button } from './Button';
-import './header.css';
 
 type User = {
   name: string;
