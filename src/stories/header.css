@@ -5,6 +5,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background-color: #0D4A3E;
+  color: white;
 }
 
 .storybook-header svg {
@@ -14,11 +16,11 @@
 
 .storybook-header h1 {
   font-weight: 700;
-  font-size: 20px;
+  font-size: 16px;
   line-height: 1;
-  margin: 6px 0 6px 10px;
+  margin: 8px 0 6px 10px;
   display: inline-block;
-  vertical-align: top;
+  vertical-align: center;
 }
 
 .storybook-header button + button {
@@ -26,7 +28,7 @@
 }
 
 .storybook-header .welcome {
-  color: #333;
+  color: white;
   font-size: 14px;
   margin-right: 10px;
 }

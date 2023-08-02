@@ -18,23 +18,15 @@ export const Header = ({ user, onLogin, onLogout, onCreateAccount }: HeaderProps
   <header>
     <div className="storybook-header">
       <div>
-        <svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-          <g fill="none" fillRule="evenodd">
-            <path
-              d="M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z"
-              fill="#FFF"
-            />
-            <path
-              d="M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z"
-              fill="#555AB9"
-            />
-            <path
-              d="M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z"
-              fill="#91BAF8"
-            />
-          </g>
-        </svg>
-        <h1>Acme</h1>
+      <svg width="32" height="32" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="100" height="100" fill="#0D4A3E"/>
+      <rect x="56.5088" y="25.3428" width="44.0702" height="9.48573" transform="rotate(135 56.5088 25.3428)" fill="white"/>
+      <path d="M49.9478 56.6504L43.1147 49.8173L49.9478 49.8173L56.6552 49.943L49.9478 56.6504Z" fill="white"/>
+      <rect x="49.8008" y="80.999" width="44.0702" height="9.48573" transform="rotate(-135 49.8008 80.999)" fill="white"/>
+      <rect x="80.9834" y="49.8164" width="44.0702" height="9.48573" transform="rotate(135 80.9834 49.8164)" fill="white"/>
+      </svg>
+
+        <h1>CV ZAMAN NOW</h1>
       </div>
       <div>
         {user ? (
