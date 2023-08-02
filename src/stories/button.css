@@ -2,19 +2,19 @@
   font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 700;
   border: 0;
-  border-radius: 3em;
+  border-radius: 0px;
   cursor: pointer;
   display: inline-block;
   line-height: 1;
 }
 .storybook-button--primary {
   color: white;
-  background-color: #1ea7fd;
+  background-color: transparent;
 }
 .storybook-button--secondary {
-  color: #333;
+  color: white;
   background-color: transparent;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
+  box-shadow: rgba(255, 255, 255, 0.549) 0px 0px 0px 1px inset;
 }
 .storybook-button--small {
   font-size: 12px;

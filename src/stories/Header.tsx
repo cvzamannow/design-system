@@ -1,5 +1,5 @@
 import React from 'react';
-
+import StorybookHeader from './header.styles';
 import { Button } from './Button';
 import './header.css';
 
@@ -16,7 +16,7 @@ interface HeaderProps {
 
 export const Header = ({ user, onLogin, onLogout, onCreateAccount }: HeaderProps) => (
   <header>
-    <div className="storybook-header">
+    <StorybookHeader>
       <div>
       <svg width="32" height="32" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
       <rect width="100" height="100" fill="#0D4A3E"/>
@@ -34,15 +34,15 @@ export const Header = ({ user, onLogin, onLogout, onCreateAccount }: HeaderProps
             <span className="welcome">
               Welcome, <b>{user.name}</b>!
             </span>
-            <Button size="small" onClick={onLogout} label="Log out" />
+            {/* <Button size="small" onClick={onLogout} label="Log out" /> */}
           </>
         ) : (
           <>
-            <Button size="small" onClick={onLogin} label="Log in" />
-            <Button primary size="small" onClick={onCreateAccount} label="Sign up" />
+            <Button size="small" onClick={onCreateAccount} label="Daftar" />
+            <Button primary size="small" onClick={onLogin} label="Masuk" />
           </>
         )}
       </div>
-    </div>
+    </StorybookHeader>
   </header>
 );

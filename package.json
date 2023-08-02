@@ -13,7 +13,8 @@
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "styled-components": "^6.0.6"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.1.1",
@@ -36,5 +37,9 @@
     "storybook": "^7.1.1",
     "typescript": "^5.0.2",
     "vite": "^4.3.9"
-  }
+  },
+  "main": "index.js",
+  "repository": "https://github.com/cvzamannow/design-system.git",
+  "author": "Roid-obi <contohdiamazon2@gmail.com>",
+  "license": "MIT"
 }
