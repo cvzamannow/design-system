@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Form.css';
+import { FormInput, FormContainer } from './form.styles'
 
 interface FormProps {
   placeholder?: string;
@@ -13,14 +13,14 @@ export const Form: React.FC<FormProps> = ({ placeholder }) => {
   };
 
   return (
-    <div className="form-container">
-      <input
+    <FormContainer>
+      <FormInput
         type="text"
         className="form-input"
         placeholder={placeholder}
         value={value}
         onChange={handleChange}
       />
-    </div>
+    </FormContainer>
   );
 };
