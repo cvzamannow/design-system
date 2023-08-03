@@ -8,6 +8,11 @@ export const FormInput = styled.input`
   border-radius: 5px;
   outline: none;
   width: 300px;
+
+  /* Ganti warna border menjadi hijau saat form dalam fokus */
+  &:focus {
+    border: 3px solid #065f4673;
+  }
 `;
 
 // Komponen FormContainer
