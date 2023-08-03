@@ -24,7 +24,7 @@ export const BoxShadow = ({
       case 'Md':
         return 'Md';
       case 'Lg':
-        return 'Large';
+        return 'Lg';
       case 'xl':
         return 'xl';
       case 'xxl':
