@@ -20,6 +20,6 @@ Default.args = {};
 
 export const WithPlaceholder: Story = {};
 WithPlaceholder.args = {
-  placeholder: 'Enter your name',
+  placeholder: 'Enter your text...',
 };
 
