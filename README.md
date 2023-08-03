@@ -1,4 +1,4 @@
-# Storybook CVZamanNow
+# Storybook CV ZamanNow
 ## Typescript + React + Storybook + Vite
 
 
