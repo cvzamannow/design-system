@@ -4,6 +4,10 @@ import { Header } from './Header';
 
 const meta = {
   title: 'Example/Header',
+  // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
+  argTypes: {
+    backgroundColor: { control: 'color' },
+  },
   component: Header,
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/react/writing-docs/autodocs
   tags: ['autodocs'],
