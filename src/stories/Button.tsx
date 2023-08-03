@@ -1,4 +1,4 @@
-import './button.css';
+import ButtonStyled from "./button.styles";
 
 interface ButtonProps {
   /**
@@ -6,7 +6,7 @@ interface ButtonProps {
    */
   primary?: boolean;
   /**
-   * What background color to use
+   * What background color to use 
    */
   backgroundColor?: string;
   /**
@@ -35,13 +35,13 @@ export const Button = ({
 }: ButtonProps) => {
   const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
   return (
-    <button
+    <ButtonStyled
       type="button"
       className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
       style={{ backgroundColor }}
       {...props}
     >
       {label}
-    </button>
+    </ButtonStyled>
   );
 };
