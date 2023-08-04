@@ -1,19 +1,19 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from "@storybook/react";
 
-import { Header } from './Header';
+import { Header } from "./Header";
 
 const meta = {
-  title: 'Example/Header',
+  title: "Stories/Header",
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
-    backgroundColor: { control: 'color' },
+    backgroundColor: { control: "color" },
   },
   component: Header,
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/react/writing-docs/autodocs
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   parameters: {
     // More on how to position stories at: https://storybook.js.org/docs/react/configure/story-layout
-    layout: 'fullscreen',
+    layout: "fullscreen",
   },
 } satisfies Meta<typeof Header>;
 
@@ -23,7 +23,7 @@ type Story = StoryObj<typeof meta>;
 export const LoggedIn: Story = {
   args: {
     user: {
-      name: 'Vestia Zeta',
+      name: "Vestia Zeta",
     },
   },
 };
