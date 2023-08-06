@@ -22,6 +22,7 @@ export const CardDefault: Story = {
   args: {
     card: "CardDefault",
     label: "Card Default",
+    style: { height: "306px", width: "193px" }, // Atur tinggi dan lebar sesuai kebutuhan Anda
   },
 };
 
@@ -29,6 +30,7 @@ export const CardHover: Story = {
   args: {
     card: "CardHover",
     label: "Card Hover",
+    style: { height: "306px", width: "193px" }, // Atur tinggi dan lebar sesuai kebutuhan Anda
   },
 };
 

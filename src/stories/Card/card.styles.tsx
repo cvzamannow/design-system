@@ -17,14 +17,10 @@ const CardStyled = styled.div`
 
   &.storybook-card--CardDefault {
     background-color: #D9D9D9;
-    width: 193px;
-    height: 306px;
   }
 
   &.storybook-card--CardHover {
     background-color: #D1D5DB;
-    width: 193px;
-    height: 306px;
 
     &:hover {
       color: #09342B;

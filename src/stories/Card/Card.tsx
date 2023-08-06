@@ -9,12 +9,14 @@ interface CardProps {
    * contents
    */
   label: string;
+
+  style?: React.CSSProperties; // Tambahkan properti style untuk mengatur tinggi dan lebar card
 }
 
 /**
  * Primary UI component for user interaction
  */
-export const Card = ({ card = "CardDefault", label, ...props }: CardProps) => {
+export const Card = ({ card = "CardDefault", label, style, ...props }: CardProps) => {
   const getCardLabel = (card: CardProps["card"]) => {
     switch (card) {
       case "CardHover":
@@ -28,7 +30,7 @@ export const Card = ({ card = "CardDefault", label, ...props }: CardProps) => {
   const cardLabel = getCardLabel(card);
 
   return (
-    <CardStyled className={["storybook-card", `storybook-card--${card}`].join(" ")} {...props}>
+    <CardStyled className={["storybook-card", `storybook-card--${card}`].join(" ")} style={style} {...props}>
       {cardLabel}
     </CardStyled>
   );
