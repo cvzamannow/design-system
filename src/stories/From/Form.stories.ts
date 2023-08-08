@@ -15,9 +15,11 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+// For Default Form
 export const Default: Story = {};
 Default.args = {};
 
+// For the Placeholder Form
 export const WithPlaceholder: Story = {};
 WithPlaceholder.args = {
   placeholder: "Enter your Text...",
