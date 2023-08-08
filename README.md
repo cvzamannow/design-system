@@ -2,69 +2,64 @@
 ## Typescript + React + Storybook + Vite
 
 
-Alat pengembangan perangkat lunak (development tool) yang digunakan untuk mengembangkan, memeriksa, dan menerapkan komponen antarmuka pengguna (UI components) secara terisolasi. Biasanya, ketika kita mengembangkan aplikasi berbasis web, kita membangun berbagai komponen UI seperti tombol, kartu, header, footer, dan banyak lagi.
+A software development tool (development tool) used to develop, inspect, and deploy user interface components (UI components) in isolation. Usually, when we develop web-based applications, we build various UI components such as buttons, cards, headers, footers and many more.
 
-Storybook memungkinkan kita untuk memvisualisasikan dan berinteraksi dengan komponen-komponen ini secara terpisah dari aplikasi utama. Dengan kata lain, kita dapat membuat cerita (story) untuk setiap komponen dan melihatnya dalam isolasi tanpa harus berinteraksi dengan keseluruhan aplikasi.
+Storybook allows us to visualize and interact with these components separately from the main application. In other words, we can create a story for each component and view it in isolation without having to interact with the rest of the application.
 
-## Daftar Isi
+## List of contents
 
 - [Demo](#demo)
-- [Instalasi](#instalasi)
-- [Penggunaan](#penggunaan)
-- [Kontribusi](#kontribusi)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contribution](#contribution)
 
-## Demo
+## Demos
 
-  -blum syap
+   -blum syap
 
-## Instalasi
+## Installation
 
-1. Klona repositori ini:
-
-   ```bash
-   git clone https://github.com/nama_pengguna/nama_proyek.git
-
-2. Pindah ke direktori proyek:
+1. Clone this repository:
 
     ```bash
-    cd design-system
+    git clone https://github.com/user_name/project_name.git
 
-3. Install dependensi:
+2. Move to the project directory:
+
+     ```bash
+     cd design-system
+
+3. Install dependencies:
+
+     ```bash
+    npm install
+
+## Use
+
+1. To run Storybook:
 
     ```bash
-   npm install
+    yarn storybook
 
-## Penggunaan
+## Contribution
 
-1. Untuk menjalankan Storybook:
+We really appreciate contributions from the community! If you wish to contribute, please follow the steps below:
 
-   ```bash
-   yarn storybook
+1. Fork this repository.
 
-## Kontribusi
+2. Create a new feature branch:
 
-Kami sangat menghargai kontribusi dari komunitas! Jika Anda ingin berkontribusi, silakan ikuti langkah-langkah di bawah ini:
+    ```bash
+    git checkout -b new-features
 
-1. Fork repositori ini.
+3. Make the necessary changes and commit:
 
-2. Buat cabang fitur baru:
+    ```bash
+    git commit -m "Change description"
 
-   ```bash
-   git checkout -b fitur-baru
+4. Push the changes to the feature branch:
 
-3. Lakukan perubahan yang diperlukan dan lakukan commit:
+    ```bash
+    git push origin new-features
 
-   ```bash
-   git commit -m "Deskripsi perubahan"
-
-4. Dorong perubahan ke cabang fitur:
-
-   ```bash
-   git push origin fitur-baru
-
-5. Buat Pull Request di repositori ini.
-
-
-
-
-   
+5. Create a Pull Request in this repository.
