@@ -1,5 +1,5 @@
-import { Button } from "../Button/Button";
 import StorybookHeader from "./header.styles";
+import { Button } from "../Button/Button";
 
 type User = {
   name: string;
@@ -37,7 +37,7 @@ export const Header = ({ user, onLogin, onLogout, onCreateAccount, backgroundCol
               <span className="welcome">
                 Welcome, <b>{user.name}</b>!
               </span>
-              {/* <Button size="small" onClick={onLogout} label="Log out" /> */}
+              <Button size="small" onClick={onLogout} label="Log out" />
             </>
           ) : (
             <>
