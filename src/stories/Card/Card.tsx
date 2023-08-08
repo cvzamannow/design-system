@@ -2,7 +2,7 @@ import CardStyled from "./card.styles";
 
 interface CardProps {
   /**
-   * How shadow should the box be?
+   * How should the Card be?
    */
   card?: "CardDefault" | "CardHover" ;
   /**
@@ -10,7 +10,7 @@ interface CardProps {
    */
   label: string;
 
-  style?: React.CSSProperties; // Tambahkan properti style untuk mengatur tinggi dan lebar card
+  style?: React.CSSProperties; // added a style property to set the height and width of the card
 }
 
 /**

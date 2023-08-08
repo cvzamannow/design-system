@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
 const CardStyled = styled.div`
-  /* CSS styling untuk kelas "storybook-button" */
+  /* CSS styling for the "storybook-card" class */
   &.storybook-card {
-    /* Gaya umum untuk tombol */
+    /* General style for cards */
     font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     background-color: #D9D9D9;
     color: #0000008a;
@@ -28,7 +28,7 @@ const CardStyled = styled.div`
     }
   }
 
-  /* Tambahkan gaya lain jika diperlukan */
+  /* Add another style if needed */
 `;
 
 export default CardStyled;
