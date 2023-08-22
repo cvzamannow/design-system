@@ -4,7 +4,7 @@ import { within, userEvent } from '@storybook/testing-library';
 import { Page } from './Page';
 
 const meta = {
-  title: 'Example/Page',
+  title: 'Stories/Page',
   component: Page,
   parameters: {
     // More on how to position stories at: https://storybook.js.org/docs/react/configure/story-layout
@@ -22,7 +22,7 @@ export const LoggedIn: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     const loginButton = await canvas.getByRole('button', {
-      name: /Log in/i,
+      name: /Masuk/i,
     });
     await userEvent.click(loginButton);
   },
