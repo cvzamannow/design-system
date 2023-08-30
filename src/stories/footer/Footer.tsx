@@ -7,7 +7,7 @@ import Facebook from "../assets/Facebook.svg"
 import Twitter from "../assets/Twitter.svg"
 
 interface FooterProps {
-  backgroundColor?: string;
+  backgroundColor?: string
 }
 
 interface FooterSectionProps {
