@@ -14,10 +14,12 @@ interface LabelProps {
 /**
  * Primary UI component for user interaction
  */
-export const Label = ({ size = "normal", label, ...props }: LabelProps) => {
+const Label = ({ size = "normal", label, ...props }: LabelProps) => {
   return (
     <LabelStyled data-testid={`label-size-${size}`} className={["storybook-label", `storybook-label--${size}`].join(" ")} {...props}>
       {label}
     </LabelStyled>
   );
 };
+
+export default Label;
