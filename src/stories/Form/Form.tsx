@@ -5,7 +5,7 @@ interface FormProps {
   placeholder?: string;
 }
 
-export const Form: React.FC<FormProps> = ({ placeholder }) => {
+const Form: React.FC<FormProps> = ({ placeholder }) => {
   const [value, setValue] = useState("");
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -18,3 +18,5 @@ export const Form: React.FC<FormProps> = ({ placeholder }) => {
     </FormContainer>
   );
 };
+
+export default Form;
