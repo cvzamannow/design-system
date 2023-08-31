@@ -8,7 +8,7 @@ interface ColProps {
   style?: React.CSSProperties; 
 }
 
-export const Col = ({ style }: ColProps) => {
+const Col = ({ style }: ColProps) => {
   return (
 
     
@@ -25,3 +25,5 @@ export const Col = ({ style }: ColProps) => {
       </ColStyled>
   );
 };
+
+export default Col;

@@ -8,7 +8,7 @@ interface RowProps {
   style?: React.CSSProperties; 
 }
 
-export const Row = ({ style }: RowProps) => {
+const Row = ({ style }: RowProps) => {
   return (
 
       <RowStyled className="storybook-row" style={style}>
@@ -24,3 +24,5 @@ export const Row = ({ style }: RowProps) => {
       </RowStyled>
   );
 };
+
+export default Row;
