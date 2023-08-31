@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { within } from '@storybook/testing-library';
 import { expect } from "@storybook/jest";
 
-import { BoxShadow } from "./BoxShadow";
+import BoxShadow from "./BoxShadow";
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {

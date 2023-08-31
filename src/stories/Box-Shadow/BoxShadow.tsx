@@ -10,7 +10,7 @@ interface BoxProps {
 /**
  * Primary UI component for user interaction
  */
-export const BoxShadow = ({ shadow = "base", ...props }: BoxProps) => {
+const BoxShadow = ({ shadow = "base", ...props }: BoxProps) => {
   const getShadowLabel = (shadow: BoxProps["shadow"]) => {
     switch (shadow) {
       case "Md":
@@ -29,7 +29,7 @@ export const BoxShadow = ({ shadow = "base", ...props }: BoxProps) => {
     }
   };
 
-  const shadowLabel = getShadowLabel(shadow);
+const shadowLabel = getShadowLabel(shadow);
 
   return (
     <BoxStyled data-testid={`shadow-${shadow}`} className={["storybook-box", `storybook-box--${shadow}`].join(" ")} {...props}>
@@ -37,3 +37,5 @@ export const BoxShadow = ({ shadow = "base", ...props }: BoxProps) => {
     </BoxStyled>
   );
 };
+
+export default BoxShadow;
