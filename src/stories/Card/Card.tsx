@@ -12,7 +12,7 @@ interface CardProps {
 /**
  * Primary UI component for user interaction
  */
-export const Card = ({ card = "CardDefault", style, ...props }: CardProps) => {
+const Card = ({ card = "CardDefault", style, ...props }: CardProps) => {
   const getCardLabel = (card: CardProps["card"]) => {
     switch (card) {
       case "CardHover":
@@ -31,3 +31,5 @@ export const Card = ({ card = "CardDefault", style, ...props }: CardProps) => {
     </CardStyled>
   );
 };
+
+export default Card;
