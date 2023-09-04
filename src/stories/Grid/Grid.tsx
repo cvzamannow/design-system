@@ -1,24 +1,17 @@
 import React from "react";
-import { StyledGrid, GridProps, ContainerGrid } from "./grid.styles";
-import CardStyled from "../Card/card.styles";
+import { StyledGrid, GridProps } from "./grid.styles";
 
-const Grid: React.FC<GridProps> = ({ columns, gap, cardCount }) => {
-  const cardItems = Array.from({ length: cardCount }, (_, index) => index + 1);
 
+
+const Grid: React.FC<GridProps> = ({ items, columns, gap }) => {
   return (
-    <ContainerGrid>
-      <StyledGrid columns={columns} gap={gap} cardCount={8}>
-        {cardItems.map((item) => (
-          <CardStyled
-            key={item}
-            className={["storybook-card", `storybook-card--CardHover`].join(" ")}
-            style={{ height: "200px", width: "200px" }}
-          >
+      <StyledGrid items={items} columns={columns} gap={gap}>
+        {items.map((item, index) => (
+          <div key={index}>
             {item}
-          </CardStyled>
+          </div>
         ))}
       </StyledGrid>
-    </ContainerGrid>
   );
 };
 

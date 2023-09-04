@@ -1,37 +1,61 @@
 // src/stories/GridStory.stories.tsx
 import type { Meta, StoryObj } from "@storybook/react";
-import { within } from '@storybook/testing-library';
+import { within } from "@storybook/testing-library";
 import { expect } from "@storybook/jest";
 
 import Grid from "./Grid";
+import Card from "../Card/Card";
+import { ContentText } from "../Card/card.styles";
 
 const meta = {
-    title: "Stories/Grid",
-    component: Grid,
-    // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/react/writing-docs/autodocs
-    tags: ["autodocs"],
-    parameters: {
-      // More on how to position stories at: https://storybook.js.org/docs/react/configure/story-layout
-      layout: "fullscreen",
-    },
-  } satisfies Meta<typeof Grid>;
-  
-  export default meta;
-  type Story = StoryObj<typeof meta>;
-  
+  title: "Stories/Grid",
+  component: Grid,
+  tags: ["autodocs"],
+  parameters: {
+    layout: "centered",
+  },
+} satisfies Meta<typeof Grid>;
 
-// More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
-export const Grid1: Story = {
-    args: {
-        columns: 4,
-        gap: '16px', 
-        cardCount: 4, // Number of components
-    },
-    play: async ({ canvasElement }) => {
-      const canvas = within(canvasElement);
-      const testGridNumber = await canvas.getByText('1');
-  
-      await expect(testGridNumber).toBeInTheDocument();
-    },
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+const generateCardItems = (count: number) => {
+  const cardItems = [];
+  for (let i = 0; i < count; i++) {
+    cardItems.push(
+      <Card
+        data-testid={"card-item"}
+        card="CardHover"
+        content={[
+          <ContentText>
+            <p>Content {i}</p>
+          </ContentText>,
+        ]}
+        style={{
+          height: "200px",
+          width: "200px",
+        }}
+        key={`card-${i}`}
+      />
+    );
+  }
+  return cardItems;
 };
-  
+
+export const Grid1: Story = {
+  args: {
+    items: generateCardItems(4), // Ubah angka 4 sesuai dengan jumlah item yang Anda inginkan.
+    columns: 2,
+    gap: "4px",
+  },
+
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const cardItems = canvas.getAllByTestId("card-item"); // Menambahkan atribut test id pada Card element
+
+    for (let i = 0; i < cardItems.length; i++) {
+      const contentText = await canvas.findByText(`Content ${i}`);
+      expect(contentText).toBeInTheDocument();
+    }
+  },
+};

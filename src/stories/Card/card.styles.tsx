@@ -4,27 +4,32 @@ const CardStyled = styled.div`
   /* CSS styling for the "storybook-card" class */
   &.storybook-card {
     /* General style for cards */
-    font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    background-color: #D9D9D9;
-    color: #0000008a;
-    font-weight: 700;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    line-height: 1;
     transition: background-color 0.3s, box-shadow 0.5s; /* Add transition property */
   }
 
   &.storybook-card--CardDefault {
-    background-color: #D9D9D9;
+    /*  */
   }
 
   &.storybook-card--CardHover {
-    background-color: #D1D5DB;
+    background-color: #f2f2f2;
+    position: relative;
+    overflow: hidden;
 
-    &:hover {
-      color: #09342B;
-      background-color: #fbbe24cb;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 165, 0, 0);
+      transition: background-color 0.3s ease;
+    }
+    
+
+    &:hover::after {
+      background-color: rgba(255, 165, 0, 0.5); /* Warna oranye transparan */
     }
   }
 
@@ -32,3 +37,20 @@ const CardStyled = styled.div`
 `;
 
 export default CardStyled;
+
+
+
+export const ContentText = styled.div`
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-color: #D1D5DB;
+
+  p {
+    font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #000000e2;
+    margin: auto;
+  }
+
+`;
