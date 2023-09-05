@@ -3,6 +3,7 @@ import { within } from '@storybook/testing-library';
 import { expect } from "@storybook/jest";
 
 import Card from "./Card";
+import { ContentText } from "./card.styles";
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {
@@ -22,6 +23,11 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const CardDefault: Story = {
   args: {
+    content: [ 
+      <ContentText>
+        <p>Card Default</p>
+      </ContentText>
+      ],
     card: "CardDefault",
     style: { height: "306px", width: "193px" },
   },
@@ -37,6 +43,11 @@ export const CardDefault: Story = {
 
 export const CardHover: Story = {
   args: {
+    content: [ 
+      <ContentText>
+        <p>Card Hover</p>
+      </ContentText>
+      ],
     card: "CardHover",
     style: { height: "306px", width: "193px" },
   },

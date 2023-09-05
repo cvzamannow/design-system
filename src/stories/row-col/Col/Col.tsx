@@ -1,28 +1,18 @@
-import CardStyled from "../../Card/card.styles";
 import ColStyled from "./col.styles";
 
 interface ColProps {
+  items?: JSX.Element[];
   /**
-   * Add a style property to set the card's height and width
+   * Because gap is still a new feature so some browsers don't support it, then (gap optional).
    */
-  style?: React.CSSProperties; 
+  style?: React.CSSProperties;
 }
 
-const Col = ({ style }: ColProps) => {
+const Col = ({ style, items }: ColProps) => {
   return (
-
-    
-      <ColStyled className="storybook-col" style={style}>
-        <CardStyled className={["storybook-card", `storybook-card--CardHover`].join(" ")} style={{ height: "200px", width: "200px" }}>
-          Sample
-        </CardStyled>
-        <CardStyled className={["storybook-card", `storybook-card--CardHover`].join(" ")} style={{ height: "200px", width: "200px" }}>
-          Sample
-        </CardStyled>
-        <CardStyled className={["storybook-card", `storybook-card--CardHover`].join(" ")} style={{ height: "200px", width: "200px" }}>
-          Sample
-        </CardStyled>
-      </ColStyled>
+    <ColStyled className="storybook-col" style={style}>
+      {items}
+    </ColStyled>
   );
 };
 

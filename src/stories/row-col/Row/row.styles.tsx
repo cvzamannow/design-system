@@ -6,7 +6,6 @@ const RowStyled = styled.div`
     /* General style for row */
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
   }
 
   /* Add another style if needed */

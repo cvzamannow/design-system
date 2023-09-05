@@ -1,5 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import Row from "./Row";
+import { ContentText } from "../../Card/card.styles";
+import Card from "../../Card/Card";
 
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
@@ -17,10 +19,37 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+const generateCardItems = (count: number) => {
+  const cardItems = [];
+  for (let i = 0; i < count; i++) {
+    cardItems.push(
+      <Card
+        data-testid={"row-item"}
+        card="CardHover"
+        content={[
+          <ContentText>
+            <p>Content {i}</p>
+          </ContentText>,
+        ]}
+        style={{
+          height: "200px",
+          width: "200px",
+        }}
+        key={`card-${i}`}
+      />
+    );
+  }
+  return cardItems;
+};
+
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const Row1: Story = {
   args: {
-    style: { gap: "3px"},
+    items: generateCardItems(3),
+    style: { 
+      gap: "3px",
+      justifyContent: "center",
+    },
   },
 };
 
