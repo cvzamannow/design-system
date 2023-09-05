@@ -10,7 +10,7 @@ const Meta = {
   tags: ["autodocs"],
   parameters: {
     // More on how to position stories at: https://storybook.js.org/docs/react/configure/story-layout
-    layout: "fullscreen",
+    layout: "centered",
   },
 } as Meta<typeof Form>;
 
@@ -19,16 +19,27 @@ type Story = StoryObj<typeof Meta>;
 
 // For Default Form
 export const Default: Story = {};
-Default.args = {};
+Default.args = {
+  label: "Your text:",
+};
+Default.play = async ({ canvasElement}) => {
+  const canvas = within(canvasElement);
+  const testText = await canvas.getByText('Your text:');
+
+  await expect(testText).toBeInTheDocument;
+};
 
 // For the Placeholder Form
 export const WithPlaceholder: Story = {};
 WithPlaceholder.args = {
+  label: "Your text:",
   placeholder: "Enter your Text...",
 };
 WithPlaceholder.play = async ({ canvasElement}) => {
   const canvas = within(canvasElement);
+  const testText = await canvas.getByText('Your text:');
   const WPlaceholder = await canvas.getByPlaceholderText("Enter your Text...");
 
   await expect(WPlaceholder).toBeInTheDocument;
-}
+  await expect(testText).toBeInTheDocument;
+};

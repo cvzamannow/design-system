@@ -1,5 +1,11 @@
 import styled from 'styled-components';
 
+// Form component
+export const FormComponent = styled.form`
+  
+`;
+
+
 // FormInput component
 export const FormInput = styled.input`
   background-color: #F3F4F6;
@@ -17,10 +23,11 @@ export const FormInput = styled.input`
   }
 `;
 
-// FormContainer component
-export const FormContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 200px;
+// Label FormInput
+export const LabelForm = styled.label`
+  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  display: block;
+  margin-bottom: 2px;
+  color: #6B7280;
 `;
+

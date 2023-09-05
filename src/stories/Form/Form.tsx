@@ -1,11 +1,13 @@
 import React, { useState } from "react";
-import { FormInput, FormContainer } from "./form.styles";
+import { FormInput, FormComponent, LabelForm } from "./form.styles";
 
 interface FormProps {
+  label?: string;
+
   placeholder?: string;
 }
 
-const Form: React.FC<FormProps> = ({ placeholder }) => {
+const Form: React.FC<FormProps> = ({ label, placeholder }) => {
   const [value, setValue] = useState("");
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -13,9 +15,10 @@ const Form: React.FC<FormProps> = ({ placeholder }) => {
   };
 
   return (
-    <FormContainer>
+    <FormComponent>
+      <LabelForm>{label}</LabelForm>
       <FormInput type="text" className="form-input" placeholder={placeholder} value={value} onChange={handleChange} />
-    </FormContainer>
+    </FormComponent>
   );
 };
 
