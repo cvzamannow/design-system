@@ -4,18 +4,6 @@ const BoxStyled = styled.div`
   /* CSS styling for the "storybook-box-shadow" class */
   &.storybook-box {
     /* General style for box */
-    font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    background-color: white;
-    color: #0000008a;
-    font-weight: 700;
-    width: 200px;
-    height: 200px;
-    border: 0;
-    border-radius: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    line-height: 1;
     transition: background-color 0.3s, box-shadow 0.5s; /* Add transition property */
   }
 
@@ -54,3 +42,21 @@ const BoxStyled = styled.div`
 `;
 
 export default BoxStyled;
+
+// content in box shadow
+export const ContentShadow = styled.div`
+  background-color: transparent;
+  width: 200px;
+  height: 200px;
+  border: 0;
+  display: flex;
+  align-items: center;
+
+  p {
+    margin: auto;
+    color: #0000008a;
+    font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 700;
+  }
+  
+`;
