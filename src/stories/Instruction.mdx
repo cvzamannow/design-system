@@ -1,0 +1,60 @@
+import { Meta } from "@storybook/blocks";
+import Logo from "./assets/image/Group 1.svg"
+import { TitleIns } from "./Instruction.styles.tsx"
+
+
+<Meta title="Instructions For Use" />
+
+<img width="200px" src={Logo}/>
+---
+<TitleIns>
+#  Guide to Using CV Zaman Now
+</TitleIns>
+---
+
+
+CV Zaman Now is a Storybook package that makes it easy for you to create a modern and attractive Curriculum Vitae (CV). By using this package, you can create a CV with the various components provided.
+
+## Installation
+
+Make sure you have Node.js and npm installed on your computer before starting. If not, you can download it from [Node.js website](https://nodejs.org/).
+
+To install the CV Zaman Now package, run the following command in the terminal:
+
+```bash
+npm i storybook-cvzamannow
+```
+
+## Usage Example
+
+After the package is installed, you can create your own file to create a CV using the components provided by CV Zaman Now.
+
+Create a file with the extension `.tsx` or `.ts` (eg FormPage.tsx), for example like this:
+
+```tsx
+import { Header, Button, Form } from 'storybook-cvzamannow';
+
+const FormPage = () => {
+  return (
+    <div>
+      <Header
+        onCreateAccount={() => {}}
+        onLogin={() => {}}
+        onLogout={() => {}}
+      />
+      <Form placeholder="Add Text.." />
+      <Button
+        ButtonType="secondary"
+        label="Button"
+        onClick={() => {}}
+      />
+    </div>
+  );
+};
+
+export default FormPage;
+```
+---
+<center>
+### --- Good luck 😉👍 ---
+</center>
