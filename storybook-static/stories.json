@@ -1,1 +1,1 @@
-{"v":3,"stories":{}}
+{"v":3,"stories":{"instructions-for-use--docs":{"id":"instructions-for-use--docs","title":"Instructions For Use","name":"Docs","importPath":"./src/stories/Instruction.mdx","storiesImports":[],"tags":["unattached-mdx","docs"],"kind":"Instructions For Use","story":"Docs","parameters":{"__id":"instructions-for-use--docs","docsOnly":true,"fileName":"./src/stories/Instruction.mdx"}}}}
