@@ -56,6 +56,12 @@ jobs:
       steps:
         - name: Checkout Repository
           uses: actions/checkout@v3
+        
+        - name: Upload Storybook artifacts
+          uses: actions/upload-artifact@v2
+          with:
+            name: storybook-artifacts
+            path: storybook-static
 
         - name: Install Vercel CLI
           run: yarn global add vercel
