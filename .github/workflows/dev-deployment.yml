@@ -57,6 +57,18 @@ jobs:
         - name: Checkout Repository
           uses: actions/checkout@v3
 
+        - name: Install Dependencies
+          run: |
+            npm install
+            rm package-lock.json
+            yarn install
+
+        - name: Upload Storybook artifacts
+          uses: actions/upload-artifact@v2
+          with:
+            name: storybook-artifacts
+            path: storybook-static
+
         - name: Install Vercel CLI
           run: yarn global add vercel
 
