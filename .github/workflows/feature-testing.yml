@@ -1,0 +1,46 @@
+# .github/workflows/preview.yml
+name: test feature
+on:
+  push:
+    branches: 
+      - 'feat/*'
+    
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Install Dependencies
+        run: |
+          npm install
+          rm package-lock.json
+          yarn install
+
+      - name: Build Application
+        run: yarn build-storybook
+
+  test:
+    needs: build
+    name: Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Install Dependencies
+        run: |
+          npm install
+          rm package-lock.json
+          yarn install
+
+      - name: Run Storybook tests
+        run: yarn test-storybook
+        env:
+          TARGET_URL: '${{ github.event.deployment_status.target_url }}'
+
+      - name: Run Tests Eslint
+        run: yarn lint
