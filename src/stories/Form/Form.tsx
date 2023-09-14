@@ -7,6 +7,9 @@ interface FormProps {
   placeholder?: string;
 }
 
+/**
+ * Primary UI component for user interaction
+ */
 const Form: React.FC<FormProps> = ({ label, placeholder }) => {
   const [value, setValue] = useState("");
 

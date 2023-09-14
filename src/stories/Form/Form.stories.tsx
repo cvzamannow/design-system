@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
+import { Title, Description, Subtitle, Stories, Primary as PrimaryDocBlock, Controls} from "@storybook/blocks"
 import Form from "./Form";
 import { within } from "@storybook/testing-library";
 import { expect } from "@storybook/jest";
@@ -11,6 +12,19 @@ const Meta = {
   parameters: {
     // More on how to position stories at: https://storybook.js.org/docs/react/configure/story-layout
     layout: "centered",
+    componentSubtitle: "'Component Form",
+    docs: {
+      page: () => <>
+        <Title />
+        <Description />
+        <Subtitle />
+
+        <PrimaryDocBlock />
+        <Controls />
+
+        <Stories />
+      </>,
+    },
   },
 } as Meta<typeof Form>;
 
