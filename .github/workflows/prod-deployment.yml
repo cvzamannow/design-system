@@ -41,6 +41,9 @@ jobs:
           rm package-lock.json
           yarn install
 
+      - name: Install Playwright
+        run: npx playwright install --with-deps
+
       - name: Run Storybook tests
         run: yarn test-storybook
         env:
