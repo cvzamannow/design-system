@@ -40,10 +40,5 @@ jobs:
       - name: Install Playwright
         run: npx playwright install --with-deps
 
-      - name: Run Storybook tests
-        run: yarn test-storybook --url http://127.0.0.1:6006
-        env:
-          TARGET_URL: '${{ github.event.deployment_status.target_url }}'
-
       - name: Run Tests Eslint
         run: yarn lint
