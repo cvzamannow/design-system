@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
+import { Title, Description, Subtitle, Stories, Primary as PrimaryDocBlock, Controls} from "@storybook/blocks"
 import { within } from '@storybook/testing-library';
 import { expect } from "@storybook/jest";
-
-import { Header } from "./Header";
+import Header from "./Header";
 
 const meta = {
   title: "Stories/Header",
@@ -16,6 +16,19 @@ const meta = {
   parameters: {
     // More on how to position stories at: https://storybook.js.org/docs/react/configure/story-layout
     layout: "fullscreen",
+    componentSubtitle: "'Component Header",
+    docs: {
+      page: () => <>
+        <Title />
+        <Description />
+        <Subtitle />
+
+        <PrimaryDocBlock />
+        <Controls />
+
+        <Stories />
+      </>,
+    },
   },
 } satisfies Meta<typeof Header>;
 

@@ -1,5 +1,5 @@
 import StorybookHeader from "./header.styles";
-import { Button } from "../Button/Button";
+import  Button  from "../Button/Button";
 
 type User = {
   name: string;
@@ -16,7 +16,7 @@ interface HeaderProps {
   onCreateAccount: () => void;
 }
 
-export const Header = ({ user, onLogin, onLogout, onCreateAccount, backgroundColor = "#0D4A3E" }: HeaderProps) => {
+const Header = ({ user, onLogin, onLogout, onCreateAccount, backgroundColor = "#0D4A3E" }: HeaderProps) => {
   return (
     <header>
       <StorybookHeader style={{ backgroundColor }}>
@@ -50,3 +50,5 @@ export const Header = ({ user, onLogin, onLogout, onCreateAccount, backgroundCol
     </header>
   );
 };
+
+export default Header;

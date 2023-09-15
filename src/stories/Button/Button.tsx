@@ -26,7 +26,7 @@ interface ButtonProps {
 /**
  * Primary UI component for user interaction
  */
-export const Button = ({ ButtonType = "primary", size = "medium", backgroundColor, label, ...props }: ButtonProps) => {
+const Button = ({ ButtonType = "primary", size = "medium", backgroundColor, label, ...props }: ButtonProps) => {
   const mode = `storybook-button--${ButtonType}`;
   return (
     <ButtonStyled type="button" data-testid={`button-size-${size}`} className={["storybook-button", `storybook-button--${size}`, mode].join(" ")} style={{ backgroundColor }} {...props}>
@@ -34,3 +34,5 @@ export const Button = ({ ButtonType = "primary", size = "medium", backgroundColo
     </ButtonStyled>
   );
 };
+
+export default Button;

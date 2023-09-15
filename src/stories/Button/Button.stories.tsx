@@ -1,7 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
+import { Title, Description, Subtitle, Stories, Primary as PrimaryDocBlock, Controls} from "@storybook/blocks"
 import { within } from '@storybook/testing-library';
 import { expect } from "@storybook/jest";
-import Button from "./Button";
+
+import  Button  from "./Button";
 
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
@@ -11,6 +13,19 @@ const meta = {
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/react/configure/story-layout
     layout: "centered",
+    componentSubtitle: "'Nuff Said",
+    docs: {
+      page: () => <>
+        <Title />
+        <Description />
+        <Subtitle />
+
+        <PrimaryDocBlock />
+        <Controls />
+
+        <Stories />
+      </>,
+    },
   },
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/react/writing-docs/autodocs
   tags: ["autodocs"],

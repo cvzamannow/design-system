@@ -1,7 +1,7 @@
 import React from "react";
 
 import StyledSection from "./page.styles";
-import { Header } from "../Header/Header";
+import Header from "../Header/Header";
 
 type User = {
   name: string;
