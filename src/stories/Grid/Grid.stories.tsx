@@ -1,5 +1,6 @@
 // src/stories/GridStory.stories.tsx
 import type { Meta, StoryObj } from "@storybook/react";
+import { Title, Description, Subtitle, Stories, Primary as PrimaryDocBlock, Controls} from "@storybook/blocks"
 import { within } from "@storybook/testing-library";
 import { expect } from "@storybook/jest";
 
@@ -13,6 +14,19 @@ const meta = {
   tags: ["autodocs"],
   parameters: {
     layout: "centered",
+    componentSubtitle: "'Component Grid",
+    docs: {
+      page: () => <>
+        <Title />
+        <Description />
+        <Subtitle />
+
+        <PrimaryDocBlock />
+        <Controls />
+
+        <Stories />
+      </>,
+    },
   },
 } satisfies Meta<typeof Grid>;
 
