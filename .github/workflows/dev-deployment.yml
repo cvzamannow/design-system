@@ -1,0 +1,74 @@
+# .github/workflows/preview.yml
+name: deploy to development
+on:
+  push:
+    branches:
+      - 'staging'
+    
+  pull_request:
+    branches: 
+      - 'staging'
+    types: 
+      - 'closed'
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Install Dependencies
+        run: |
+          npm install
+          rm package-lock.json
+          yarn install
+
+      - name: Build Application
+        run: yarn build-storybook
+
+  test:
+    needs: build
+    name: Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Install Dependencies
+        run: |
+          npm install
+          rm package-lock.json
+          yarn install
+
+      - name: Install Playwright
+        run: npx playwright install --with-deps
+
+      - name: Run Tests Eslint
+        run: yarn lint
+
+  staging:
+      if: github.event.pull_request.merged == true
+      needs: [test]
+      name: Deploy to staging
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout Repository
+          uses: actions/checkout@v3
+
+        - name: Install Dependencies
+          run: |
+            npm install
+            rm package-lock.json
+            yarn install
+
+        - name: Upload Storybook artifacts
+          uses: actions/upload-artifact@v2
+          with:
+            name: storybook-artifacts
+            path: storybook-static
+
+       
+    
