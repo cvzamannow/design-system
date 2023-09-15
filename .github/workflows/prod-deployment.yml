@@ -1,0 +1,80 @@
+name: deploy to production
+on:
+  push: 
+    branches: 
+      - main
+  pull_request: 
+    branches:
+      - main
+    types:
+      - closed
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Install Dependencies
+        run: |
+          npm install
+          rm package-lock.json
+          yarn install
+
+      - name: Build Application
+        run: yarn build-storybook
+
+  test:
+    name: Test
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Install Dependencies
+        run: |
+          npm install
+          rm package-lock.json
+          yarn install
+
+      - name: Install Playwright
+        run: npx playwright install --with-deps
+
+      - name: Run Test Eslint
+        run: yarn lint
+
+  production:
+    if: github.event.pull_request.merged == true
+    needs: [test]
+    name: Deploy to Production
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+          registry-url: 'https://registry.npmjs.org'
+      
+      - name: Install Dependencies
+        run: |
+          npm install
+          rm package-lock.json
+          yarn install
+
+      - name: Upload Storybook artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: storybook-artifacts
+          path: storybook-static
+
+      - name: Publish package on NPM 📦
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN_SB }}
