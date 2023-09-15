@@ -34,6 +34,16 @@ Storybook allows us to visualize and interact with these components separately f
      ```bash
     npm install
 
+4. Delete package-lock.json:
+
+     ```bash
+    rm ./package-lock.json
+
+3. Install yarn:
+
+     ```bash
+    yarn install
+
 ## Use
 
 1. To run Storybook:
