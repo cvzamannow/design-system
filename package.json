@@ -1,5 +1,5 @@
 {
-  "name": "storybook-cvzamannow",
+  "name": "@cvzamannow/storybook-cvzamannow",
   "private": false,
   "version": "0.0.0",
   "type": "module",
@@ -41,5 +41,8 @@
     "storybook-dark-mode": "^3.0.1",
     "typescript": "^5.0.2",
     "vite": "^4.3.9"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
