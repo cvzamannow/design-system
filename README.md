@@ -1,5 +1,7 @@
+<center><img src="https://github.com/Roid-obi/logo-cvzn-ds/blob/main/front-end-cvzn.png?raw=true" width="300px"/></center>
+
 # Storybook CV ZamanNow
-## Typescript + React + Storybook + Vite
+### Typescript + React + Storybook + Vite
 
 
 A software development tool (development tool) used to develop, inspect, and deploy user interface components (UI components) in isolation. Usually, when we develop web-based applications, we build various UI components such as buttons, cards, headers, footers and many more.
