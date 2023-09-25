@@ -4,17 +4,16 @@ import { Title, Description, Subtitle, Stories, Primary as PrimaryDocBlock, Cont
 import { within } from "@storybook/testing-library";
 import { expect } from "@storybook/jest";
 
-import Grid from "./Container";
-import Card from "../Card/Card";
-import { ContentText } from "../Card/card.styles";
+import Container from "./Container";
+import { ContentContainer } from "./container.styles";
 
 const meta = {
-  title: "Stories/Grid",
-  component: Grid,
+  title: "Stories/Container",
+  component: Container,
   tags: ["autodocs"],
   parameters: {
-    layout: "centered",
-    componentSubtitle: "'Nuff Said",
+    layout: "fullscreen",
+    componentSubtitle: "'Component Container",
     docs: {
       page: () => <>
         <Title />
@@ -28,39 +27,16 @@ const meta = {
       </>,
     },
   },
-} satisfies Meta<typeof Grid>;
+} satisfies Meta<typeof Container>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const generateCardItems = (count: number) => {
-  const cardItems = [];
-  for (let i = 0; i < count; i++) {
-    cardItems.push(
-      <Card
-        data-testid={"card-item"}
-        card="CardHover"
-        content={[
-          <ContentText>
-            <p>Content {i}</p>
-          </ContentText>,
-        ]}
-        style={{
-          height: "200px",
-          width: "200px",
-        }}
-        key={`card-${i}`}
-      />
-    );
-  }
-  return cardItems;
-};
-
 export const Grid1: Story = {
   args: {
-    items: generateCardItems(4), // Ubah angka 4 sesuai dengan jumlah item yang Anda inginkan.
-    columns: 2,
-    gap: "4px",
+    Contents: [
+        <ContentContainer>Content</ContentContainer>
+    ],
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);

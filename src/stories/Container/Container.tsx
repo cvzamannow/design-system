@@ -3,16 +3,12 @@ import { StyledContainer, ContainerProps } from "./container.styles";
 
 
 
-const Grid: React.FC<ContainerProps> = ({ items, columns, gap }) => {
+const Container: React.FC<ContainerProps> = ({ Contents }) => {
   return (
-      <StyledContainer items={items} columns={columns} gap={gap}>
-        {items.map((item, index) => (
-          <div key={index}>
-            {item}
-          </div>
-        ))}
+      <StyledContainer Contents={Contents}>
+        {Contents}
       </StyledContainer>
   );
 };
 
-export default Grid;
+export default Container;
