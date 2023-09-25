@@ -8,9 +8,15 @@ export interface ContainerProps {
 }
 
 export const StyledContainer = styled.div<ContainerProps>`
-    display: flex;
-    margin: 0 80px 0 80px;
-    justify-content: center;
+    width: 100%;
+    padding: 0 120px;
+    max-width: 1440px;
+    margin: auto;
+    @media screen and (max-width: 768px) {
+        width: 95%;
+        margin: auto;
+        padding: 0;
+    }
 `;
 
 export const ContentContainer = styled.div`
