@@ -15,6 +15,9 @@ interface FooterProps {
   instagramPath?: string;
   facebookPath?: string;
   twitterPath?: string;
+  aboutPath?: string;
+  contactPath?:string;
+  faqPath?:string;
   companyDescription?: string;
   questionText?: string;
   feedbackText?: string;
@@ -208,9 +211,12 @@ export const Footer: FC<FooterProps> = ({
   menu1 = "About",
   menu2= "Contact",
   menu3= "FAQ",
-  instagramPath = "default/instagram/path",
-  facebookPath = "default/facebook/path",
-  twitterPath = "default/twitter/path",
+  instagramPath = "/instagram",
+  facebookPath = "/facebook",
+  twitterPath = "/twitter/path",
+  aboutPath = "/about",
+  contactPath = "/contact",
+  faqPath = "/faq",
   companyDescription = "Memudahkan Anda menuju perusahaan impian dengan menggunakan CV yang efektif dan efisien",
   questionText = "Question or feedback ?",
   feedbackText = "We'd love to hear from you",
@@ -239,10 +245,10 @@ export const Footer: FC<FooterProps> = ({
                 <H4>Company</H4>
                 <Ul>
                   <Li>
-                    <a href="/about">{menu1}</a>
+                    <a href={aboutPath}>{menu1}</a>
                   </Li>
                   <Li>
-                    <a href="/contact">{menu2}</a>
+                    <a href={contactPath}>{menu2}</a>
                   </Li>
                 </Ul>
               </Div4>
@@ -250,7 +256,7 @@ export const Footer: FC<FooterProps> = ({
                 <H4>Pusat Bantuan</H4>
                 <Ul>
                   <Li>
-                    <a href="/faq">{menu3}</a>
+                    <a href={faqPath}>{menu3}</a>
                   </Li>
                 </Ul>
               </Div4>
