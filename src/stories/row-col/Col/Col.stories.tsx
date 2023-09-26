@@ -3,6 +3,7 @@ import { Title, Description, Subtitle, Stories, Primary as PrimaryDocBlock, Cont
 import Col from "./Col";
 import { ContentText } from "../../Card/card.styles";
 import Card from "../../Card/Card";
+// import { within } from "@storybook/testing-library";
 
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
@@ -12,7 +13,7 @@ const meta = {
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/react/configure/story-layout
     layout: "centered",
-    componentSubtitle: "'Nuff Said",
+    componentSubtitle: "'Component Col",
     docs: {
       page: () => <>
         <Title />
@@ -62,5 +63,14 @@ export const Col1: Story = {
     items: generateCardItems(3),
     style: { gap: "3px"},
   },
+  // play: async ({ canvasElement }) => {
+  //   const canvas = within(canvasElement);
+  //   const cardItems = canvas.getAllByTestId("col-item"); // Menambahkan atribut test id pada Card element
+
+  //   for (let i = 0; i < cardItems.length; i++) {
+  //     const contentText = await canvas.findByText(`Content ${i}`);
+  //     expect(contentText).toBeInTheDocument();
+  //   }
+  // },
 };
 
