@@ -40,11 +40,11 @@ export const Grid1: Story = {
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
-    const cardItems = canvas.getAllByTestId("card-item"); // Menambahkan atribut test id pada Card element
+    const testText = await canvas.getByText('Content');
+    const testIdContainer = canvas.getByTestId('container');
 
-    for (let i = 0; i < cardItems.length; i++) {
-      const contentText = await canvas.findByText(`Content ${i}`);
-      expect(contentText).toBeInTheDocument();
-    }
+    await expect(testText).toBeInTheDocument();
+    await expect(testIdContainer).toBeInTheDocument();
+    await expect(testText).toHaveStyle('background-color: #ffa724a4');
   },
 };
