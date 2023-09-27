@@ -62,7 +62,6 @@ export const Grid1: Story = {
     columns: 2,
     gap: "4px",
   },
-
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     const cardItems = canvas.getAllByTestId("card-item"); // Menambahkan atribut test id pada Card element
