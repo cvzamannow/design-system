@@ -17,7 +17,7 @@ Storybook allows us to visualize and interact with these components separately f
 
 ## Demos
 
-   -blum syap
+   - https://storybook-cvzn.vercel.app
 
 ## Installation
 
