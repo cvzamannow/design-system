@@ -1,4 +1,4 @@
-import StorybookHeader from "./header.styles";
+import StorybookHeader, { HeaderNav } from "./header.styles";
 import  Button  from "../Button/Button";
 
 type User = {
@@ -22,7 +22,7 @@ interface HeaderProps {
 
 const Header = ({ user, onLogin, onLogout, onCreateAccount, backgroundColor = "#0D4A3E", menuItems = [] }: HeaderProps) => {
   return (
-    <header>
+    <HeaderNav>
       <StorybookHeader style={{ backgroundColor }}>
         <div>
           <svg width="32" height="32" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -56,7 +56,7 @@ const Header = ({ user, onLogin, onLogout, onCreateAccount, backgroundColor = "#
           )}
         </div>
       </StorybookHeader>
-    </header>
+    </HeaderNav>
   );
 };
 

@@ -1,18 +1,21 @@
 import styled from 'styled-components';
 
+export const HeaderNav = styled.header`
+  width: 100%;
+  background-color: #0D4A3E;
+`;
+
 const StorybookHeader = styled.div`
   border-bottom: 1px solid #9CA3AF;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #0D4A3E;
   color: white;
-  width: 100%;
   padding: 0 120px;
   max-width: 1440px;
   margin: auto;
   @media screen and (max-width: 768px) {
-      width: 95%;
+      width: 100%;
       margin: auto;
       padding: 0;
   }
