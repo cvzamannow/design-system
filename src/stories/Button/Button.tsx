@@ -4,7 +4,7 @@ interface ButtonProps {
   /**
    * Is this the principal call to action on the page?
    */
-  ButtonType?: "primary" | "secondary" | "nolo";
+  ButtonType?: "preview" | "primary" | "secondary" | "nolo";
   /**
    * What background color to use
    */

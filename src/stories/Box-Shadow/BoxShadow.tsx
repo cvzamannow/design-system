@@ -5,7 +5,7 @@ interface BoxProps {
   /**
    * How shadow should the box be?
    */
-  shadow?: "base" | "Md" | "Lg" | "xl" | "xxl" | "Inner";
+  shadow?: "preview" | "base" | "Md" | "Lg" | "xl" | "xxl" | "Inner";
 }
 
 /**

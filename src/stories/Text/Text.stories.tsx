@@ -3,16 +3,16 @@ import { Title, Description, Subtitle, Stories, Primary as PrimaryDocBlock, Cont
 import { within } from '@storybook/testing-library';
 import { expect } from "@storybook/jest";
 
-import Label from "./Label";
+import Text from "./Text";
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {
-  title: "Stories/Label",
-  component: Label,
+  title: "Stories/Text",
+  component: Text,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/react/configure/story-layout
     layout: "centered",
-    componentSubtitle: "'Component Label",
+    componentSubtitle: "'Component Text",
     docs: {
       page: () => <>
         <Title />
@@ -28,12 +28,27 @@ const meta = {
   },
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/react/writing-docs/autodocs
   tags: ["autodocs"],
-} satisfies Meta<typeof Label>;
+} satisfies Meta<typeof Text>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
+export const Preview: Story = {
+  args: {
+    size: "preview",
+    label: "preview",
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const testText = await canvas.getByText('extraSmall');
+    const testSize = canvas.getByTestId('label-size-extraSmall');
+
+    await expect(testText).toBeInTheDocument();
+    await expect(testSize).toBeInTheDocument();
+  },
+};
+
 export const ExtraSmall: Story = {
   args: {
     size: "extraSmall",
@@ -41,13 +56,26 @@ export const ExtraSmall: Story = {
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
-    const testLabel = await canvas.getByText('extraSmall');
+    const testText = await canvas.getByText('extraSmall');
     const testSize = canvas.getByTestId('label-size-extraSmall');
 
-    await expect(testLabel).toBeInTheDocument();
+    await expect(testText).toBeInTheDocument();
     await expect(testSize).toBeInTheDocument();
   },
 };
+
+ExtraSmall.parameters = {
+  docs: {
+    source: {
+      code: `
+      <Text
+  label="extraSmall"
+  size="extraSmall"
+></Text>
+      `
+    }
+  }
+}
 
 export const Small: Story = {
   args: {
@@ -56,13 +84,26 @@ export const Small: Story = {
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
-    const testLabel = await canvas.getByText('Small');
+    const testText = await canvas.getByText('Small');
     const testSize = canvas.getByTestId('label-size-small');
 
-    await expect(testLabel).toBeInTheDocument();
+    await expect(testText).toBeInTheDocument();
     await expect(testSize).toBeInTheDocument();
   },
 };
+
+Small.parameters = {
+  docs: {
+    source: {
+      code: `
+      <Text
+  label="Small"
+  size="small"
+></Text>
+      `
+    }
+  }
+}
 
 export const Normal: Story = {
   args: {
@@ -71,13 +112,26 @@ export const Normal: Story = {
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
-    const testLabel = await canvas.getByText('Normal');
+    const testText = await canvas.getByText('Normal');
     const testSize = canvas.getByTestId('label-size-normal');
 
-    await expect(testLabel).toBeInTheDocument();
+    await expect(testText).toBeInTheDocument();
     await expect(testSize).toBeInTheDocument();
   },
 };
+
+Normal.parameters = {
+  docs: {
+    source: {
+      code: `
+      <Text
+      label="Normal"
+      size="normal"
+    ></Text>
+      `
+    }
+  }
+}
 
 export const Medium: Story = {
   args: {
@@ -86,13 +140,26 @@ export const Medium: Story = {
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
-    const testLabel = await canvas.getByText('Medium');
+    const testText = await canvas.getByText('Medium');
     const testSize = canvas.getByTestId('label-size-medium');
 
-    await expect(testLabel).toBeInTheDocument();
+    await expect(testText).toBeInTheDocument();
     await expect(testSize).toBeInTheDocument();
   },
 };
+
+Medium.parameters = {
+  docs: {
+    source: {
+      code: `
+      <Text
+  label="Medium"
+  size="medium"
+></Text>
+      `
+    }
+  }
+}
 
 export const Large: Story = {
   args: {
@@ -101,10 +168,23 @@ export const Large: Story = {
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
-    const testLabel = await canvas.getByText('Large');
+    const testText = await canvas.getByText('Large');
     const testSize = canvas.getByTestId('label-size-large');
 
-    await expect(testLabel).toBeInTheDocument();
+    await expect(testText).toBeInTheDocument();
     await expect(testSize).toBeInTheDocument();
   },
 };
+
+Large.parameters = {
+  docs: {
+    source: {
+      code: `
+      <Text
+  label="Large"
+  size="large"
+></Text>
+      `
+    }
+  }
+}

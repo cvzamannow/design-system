@@ -36,6 +36,24 @@ type Story = StoryObj<typeof meta>;
 
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
+export const Preview: Story = {
+  args: {
+    shadow: "preview",
+    content: [
+      <ContentShadow>
+        <p>preview</p>
+      </ContentShadow>
+    ],
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const testText = await canvas.getByText('base');
+    const testTypeShadow = canvas.getByTestId('shadow-base');
+
+    await expect(testText).toBeInTheDocument();
+    await expect(testTypeShadow).toBeInTheDocument();
+  },
+};
 export const Base: Story = {
   args: {
     shadow: "base",
@@ -52,6 +70,21 @@ export const Base: Story = {
 
     await expect(testText).toBeInTheDocument();
     await expect(testTypeShadow).toBeInTheDocument();
+  },
+};
+
+Base.parameters = {
+  docs: {
+    source: {
+      code: `
+<BoxShadow
+content={[
+  <ContentShadow><p>base</p></ContentShadow>
+]}
+  shadow="base"
+></BoxShadow>
+      `,
+    },
   },
 };
 
@@ -74,6 +107,21 @@ export const Md: Story = {
   },
 };
 
+Md.parameters = {
+  docs: {
+    source: {
+      code: `
+<BoxShadow
+content={[
+  <ContentShadow><p>Md</p></ContentShadow>
+]}
+  shadow="Md"
+></BoxShadow>
+      `,
+    },
+  },
+};
+
 export const Lg: Story = {
   args: {
     shadow: "Lg",
@@ -90,6 +138,21 @@ export const Lg: Story = {
 
     await expect(testText).toBeInTheDocument();
     await expect(testTypeShadow).toBeInTheDocument();
+  },
+};
+
+Lg.parameters = {
+  docs: {
+    source: {
+      code: `
+<BoxShadow
+content={[
+  <ContentShadow><p>Lg</p></ContentShadow>
+]}
+  shadow="Lg"
+></BoxShadow>
+      `,
+    },
   },
 };
 
@@ -112,6 +175,21 @@ export const Xl: Story = {
   },
 };
 
+Xl.parameters = {
+  docs: {
+    source: {
+      code: `
+<BoxShadow
+content={[
+  <ContentShadow><p>xl</p></ContentShadow>
+]}
+  shadow="xl"
+></BoxShadow>
+      `,
+    },
+  },
+};
+
 export const Xxl: Story = {
   args: {
     shadow: "xxl",
@@ -131,6 +209,21 @@ export const Xxl: Story = {
   },
 };
 
+Xxl.parameters = {
+  docs: {
+    source: {
+      code: `
+<BoxShadow
+content={[
+  <ContentShadow><p>xxl</p></ContentShadow>
+]}
+  shadow="xxl"
+></BoxShadow>
+      `,
+    },
+  },
+};
+
 export const Inner: Story = {
   args: {
     shadow: "Inner",
@@ -147,5 +240,20 @@ export const Inner: Story = {
 
     await expect(testText).toBeInTheDocument();
     await expect(testTypeShadow).toBeInTheDocument();
+  },
+};
+
+Inner.parameters = {
+  docs: {
+    source: {
+      code: `
+<BoxShadow
+content={[
+  <ContentShadow><p>Inner</p></ContentShadow>
+]}
+  shadow="Inner"
+></BoxShadow>
+      `,
+    },
   },
 };

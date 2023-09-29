@@ -4,7 +4,7 @@ interface CardProps {
   /**
    * How should the Card be?
    */
-  card?: "CardDefault" | "CardHover" ;
+  card?:"preview" | "CardDefault" | "CardHover" ;
 
   content?: JSX.Element[];
 

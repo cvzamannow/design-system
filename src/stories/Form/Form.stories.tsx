@@ -32,6 +32,17 @@ export default Meta;
 type Story = StoryObj<typeof Meta>;
 
 // For Default Form
+export const Preview: Story = {};
+Preview.args = {
+  label: "Your text:",
+};
+Preview.play = async ({ canvasElement}) => {
+  const canvas = within(canvasElement);
+  const testText = await canvas.getByText('Your text:');
+
+  await expect(testText).toBeInTheDocument;
+};
+
 export const Default: Story = {};
 Default.args = {
   label: "Your text:",
@@ -42,6 +53,16 @@ Default.play = async ({ canvasElement}) => {
 
   await expect(testText).toBeInTheDocument;
 };
+
+Default.parameters = {
+  docs: {
+    source: {
+      code:`
+      <Form label="Your text:"></Form>
+      `
+    }
+  }
+}
 
 // For the Placeholder Form
 export const WithPlaceholder: Story = {};
@@ -57,3 +78,16 @@ WithPlaceholder.play = async ({ canvasElement}) => {
   await expect(WPlaceholder).toBeInTheDocument;
   await expect(testText).toBeInTheDocument;
 };
+
+WithPlaceholder.parameters = {
+  docs: {
+    source: {
+      code: `
+      <Form
+  label="Your text:"
+  placeholder="Enter your Text..."
+></Form>
+      `
+    }
+  }
+}

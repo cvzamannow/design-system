@@ -57,6 +57,16 @@ const generateCardItems = (count: number) => {
 };
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
+export const Preview: Story = {
+  args: {
+    items: generateCardItems(3),
+    style: { 
+      gap: "3px",
+      justifyContent: "center",
+    },
+  },
+};
+
 export const Row1: Story = {
   args: {
     items: generateCardItems(3),
@@ -66,4 +76,24 @@ export const Row1: Story = {
     },
   },
 };
+
+Row1.parameters = {
+  docs: {
+    source: {
+      code: `
+      <Row
+  items={[
+    <Card key="card-0" card="CardHover" content={[<ContentText><p>Content 0</p></ContentText>]} data-testid="row-item" style={{height: '200px', width: '200px'}}></Card>,
+    <Card key="card-1" card="CardHover" content={[<ContentText><p>Content 1</p></ContentText>]} data-testid="row-item" style={{height: '200px', width: '200px'}}></Card>,
+    <Card key="card-2" card="CardHover" content={[<ContentText><p>Content 2</p></ContentText>]} data-testid="row-item" style={{height: '200px', width: '200px'}}></Card>
+  ]}
+  style={{
+    gap: '3px',
+    justifyContent: 'center'
+  }}
+></Row>
+      `
+    }
+  }
+}
 
