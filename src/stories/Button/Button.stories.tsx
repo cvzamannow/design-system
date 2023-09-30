@@ -14,18 +14,19 @@ const meta = {
     docs: {
       page: () => (
         <>
-          <Title />
-          <Description />
-          <Subtitle />
-          <PrimaryDocBlock />
-          <Controls />
-          <Stories />
+          <Title></Title>
+          <Description></Description>
+          <Subtitle></Subtitle>
+          <PrimaryDocBlock></PrimaryDocBlock>
+          <Controls></Controls>
+          <Stories></Stories>
         </>
       ),
     },
   },
   tags: ["autodocs"],
   argTypes: {
+    shildren: { control: "text"},
     backgroundColor: { control: "color" },
     ButtonType: { control: "text" },
     size: { control: "text" },
@@ -35,50 +36,19 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Preview: Story = {
-  
-  args: {
-    ButtonType: "preview",
-    label: "Button",
-  },
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-    const testBtn = await canvas.getByText('Button');
-    const testMediumSize = canvas.getByTestId('button-size-medium');
+export const Base = (args:any) => <Button {...args}>{args.children}</Button>;
 
-    await expect(testBtn).toBeInTheDocument();
-    await expect(testMediumSize).toBeInTheDocument();
-    await expect(testBtn).toHaveStyle('background-color: #FFA824');
-  },
-};
-export const Primary: Story = {
-  
-  args: {
-    ButtonType: "primary",
-    label: "Button",
-  },
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-    const testBtn = await canvas.getByText('Button');
-    const testMediumSize = canvas.getByTestId('button-size-medium');
-
-    await expect(testBtn).toBeInTheDocument();
-    await expect(testMediumSize).toBeInTheDocument();
-    await expect(testBtn).toHaveStyle('background-color: #FFA824');
-  },
+Base.args = {
+  onClick: () => alert('Hello'),
+  children: "your text",
+  disabled: false,
 };
 
-Primary.parameters = {
-  docs: {
-    source: {
-      code: `
-<Button
-  ButtonType="primary"
-  onClick={() => {}}
->Button</Button>
-      `,
-    },
-  },
+export const Primary = (args:any) => <Button {...args}>{args.children}</Button>;
+
+Primary.args = {
+children: "Button",
+ButtonType: "primary"
 };
 
 export const Secondary: Story = {
@@ -94,20 +64,6 @@ export const Secondary: Story = {
     await expect(testBtn).toBeInTheDocument();
     await expect(testMediumSize).toBeInTheDocument();
     await expect(testBtn).toHaveStyle('background-color: rgba(0, 0, 0, 0)');
-  },
-};
-
-Secondary.parameters = {
-  docs: {
-    source: {
-      code: `
-<Button
-  ButtonType="secondary"
-  label="Button"
-  onClick={() => {}}
-></Button>
-      `,
-    },
   },
 };
 
@@ -127,20 +83,6 @@ export const Nolo: Story = {
   },
 };
 
-Nolo.parameters = {
-  docs: {
-    source: {
-      code: `
-<Button
-  ButtonType="nolo"
-  label="Button"
-  onClick={() => {}}
-></Button>
-      `,
-    },
-  },
-};
-
 export const Small: Story = {
   args: {
     size: "small",
@@ -149,24 +91,10 @@ export const Small: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     const testTextBtn = await canvas.getByText('Button');
-    const testSmallSize = canvas.getByTestId('button-size-small'); // Assuming you have a test id for the size
+    const testSmallSize = canvas.getByTestId('button-size-small');
 
     await expect(testTextBtn).toBeInTheDocument();
     await expect(testSmallSize).toBeInTheDocument();
-  },
-};
-
-Small.parameters = {
-  docs: {
-    source: {
-      code: `
-<Button
-  ButtonType="small"
-  label="Button"
-  onClick={() => {}}
-></Button>
-      `,
-    },
   },
 };
 
@@ -178,25 +106,9 @@ export const Large: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     const testTextBtn = await canvas.getByText('Button');
-    const testLargeSize = canvas.getByTestId('button-size-large'); // Assuming you have a test id for the size
+    const testLargeSize = canvas.getByTestId('button-size-large');
 
     await expect(testTextBtn).toBeInTheDocument();
     await expect(testLargeSize).toBeInTheDocument();
   },
 };
-
-Large.parameters = {
-  docs: {
-    source: {
-      code: `
-<Button
-  ButtonType="large"
-  label="Button"
-  onClick={() => {}}
-></Button>
-      `,
-    },
-  },
-};
-
-// More on interaction testing: https://storybook.js.org/docs/react/writing-tests/interaction-testing

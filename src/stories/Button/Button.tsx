@@ -1,6 +1,7 @@
 import ButtonStyled from "./button.styles";
 
 interface ButtonProps {
+  children?: "ReactNode";
   /**
    * Is this the principal call to action on the page?
    */
@@ -26,10 +27,11 @@ interface ButtonProps {
 /**
  * Primary UI component for user interaction
  */
-const Button = ({ ButtonType = "primary", size = "medium", backgroundColor, label, ...props }: ButtonProps) => {
+const Button = ({ children, ButtonType = "primary", size = "medium", backgroundColor, label, ...props }: ButtonProps) => {
   const mode = `storybook-button--${ButtonType}`;
   return (
     <ButtonStyled type="button" data-testid={`button-size-${size}`} className={["storybook-button", `storybook-button--${size}`, mode].join(" ")} style={{ backgroundColor }} {...props}>
+      {children}
       {label}
     </ButtonStyled>
   );
