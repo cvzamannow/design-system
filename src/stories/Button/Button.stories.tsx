@@ -39,7 +39,8 @@ type Story = StoryObj<typeof meta>;
 export const Base = (args:any) => <Button {...args}>{args.children}</Button>;
 
 Base.args = {
-  onClick: () => alert('Hello'),
+  onClick: () => {},
+  label: "",
   children: "your text",
   disabled: false,
 };
@@ -47,6 +48,8 @@ Base.args = {
 export const Primary = (args:any) => <Button {...args}>{args.children}</Button>;
 
 Primary.args = {
+  onClick: () => {},
+  label:"",
 children: "Button",
 ButtonType: "primary"
 };
