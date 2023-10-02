@@ -1,6 +1,6 @@
 import ButtonStyled from "./button.styles";
 
-interface ButtonProps {
+export interface ButtonProps {
   children?: "ReactNode";
   /**
    * Is this the principal call to action on the page?

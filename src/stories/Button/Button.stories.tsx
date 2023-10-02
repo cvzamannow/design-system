@@ -3,7 +3,7 @@ import { Title, Description, Subtitle, Stories, Primary as PrimaryDocBlock, Cont
 import { within } from '@storybook/testing-library';
 import { expect } from "@storybook/jest";
 
-import Button from "./Button";
+import Button, { ButtonProps } from "./Button";
 
 const meta = {
   title: "Stories/Button",
@@ -36,7 +36,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Base = (args:any) => <Button {...args}>{args.children}</Button>;
+export const Base = (args:ButtonProps) => <Button {...args}>{args.children}</Button>;
 
 Base.args = {
   onClick: () => {},
@@ -45,13 +45,13 @@ Base.args = {
   disabled: false,
 };
 
-export const Primary = (args:any) => <Button {...args}>{args.children}</Button>;
+export const Primary = (args:ButtonProps) => <Button {...args}>{args.children}</Button>;
 
 Primary.args = {
   onClick: () => {},
   label:"",
-children: "Button",
-ButtonType: "primary"
+  children: "Button",
+  ButtonType: "primary"
 };
 
 export const Secondary: Story = {
