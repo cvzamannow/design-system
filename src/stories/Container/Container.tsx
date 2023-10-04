@@ -1,13 +1,19 @@
 import React from "react";
-import { StyledContainer, ContainerProps } from "./container.styles";
+import { StyledContainer, ContainerProps, BodyContainer } from "./container.styles";
+import FontPoppins from "../assets/font/Poppins";
 
 
 
 const Container: React.FC<ContainerProps> = ({ Contents }) => {
   return (
-      <StyledContainer data-testid={`container`} Contents={Contents}>
-        {Contents}
-      </StyledContainer>
+    <>
+      <FontPoppins />
+      <BodyContainer>
+        <StyledContainer data-testid={`container`} Contents={Contents}>
+          {Contents}
+        </StyledContainer>
+      </BodyContainer>
+    </>
   );
 };
 

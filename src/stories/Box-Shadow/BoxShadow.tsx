@@ -1,3 +1,4 @@
+import FontPoppins from "../assets/font/Poppins";
 import BoxStyled from "./boxShadow.styles";
 
 interface BoxProps {
@@ -5,7 +6,7 @@ interface BoxProps {
   /**
    * How shadow should the box be?
    */
-  shadow?: "base" | "Md" | "Lg" | "xl" | "xxl" | "Inner";
+  shadow?: "preview" | "base" | "Md" | "Lg" | "xl" | "xxl" | "Inner";
 }
 
 /**
@@ -13,9 +14,12 @@ interface BoxProps {
  */
 const BoxShadow = ({ shadow = "base", content, ...props }: BoxProps) => {
   return (
-    <BoxStyled data-testid={`shadow-${shadow}`} className={["storybook-box", `storybook-box--${shadow}`].join(" ")} {...props}>
-      {content}
-    </BoxStyled>
+    <>
+      <FontPoppins />
+      <BoxStyled data-testid={`shadow-${shadow}`} className={["storybook-box", `storybook-box--${shadow}`].join(" ")} {...props}>
+        {content}
+      </BoxStyled>
+    </>
   );
 };
 

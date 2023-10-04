@@ -31,7 +31,6 @@ const Meta = {
 export default Meta;
 type Story = StoryObj<typeof Meta>;
 
-// For Default Form
 export const Default: Story = {};
 Default.args = {
   label: "Your text:",

@@ -57,6 +57,16 @@ const generateCardItems = (count: number) => {
 };
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
+export const Preview: Story = {
+  args: {
+    items: generateCardItems(3),
+    style: { 
+      gap: "3px",
+      justifyContent: "center",
+    },
+  },
+};
+
 export const Row1: Story = {
   args: {
     items: generateCardItems(3),

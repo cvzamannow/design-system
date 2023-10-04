@@ -56,10 +56,29 @@ const generateCardItems = (count: number) => {
   return cardItems;
 };
 
+export const Preview: Story = {
+  args: {
+    items: generateCardItems(4), // Ubah angka 4 sesuai dengan jumlah item yang Anda inginkan.
+    columns: 2,
+    columnsMobile:1,
+    gap: "4px",
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const cardItems = canvas.getAllByTestId("card-item"); // Menambahkan atribut test id pada Card element
+
+    for (let i = 0; i < cardItems.length; i++) {
+      const contentText = await canvas.findByText(`Content ${i}`);
+      expect(contentText).toBeInTheDocument();
+    }
+  },
+};
+
 export const Grid1: Story = {
   args: {
     items: generateCardItems(4), // Ubah angka 4 sesuai dengan jumlah item yang Anda inginkan.
     columns: 2,
+    columnsMobile:1,
     gap: "4px",
   },
   play: async ({ canvasElement }) => {

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FormInput, FormComponent, LabelForm } from "./form.styles";
+import FontPoppins from "../assets/font/Poppins";
 
 interface FormProps {
   label?: string;
@@ -15,10 +16,13 @@ const Form: React.FC<FormProps> = ({ label, placeholder }) => {
   };
 
   return (
-    <FormComponent>
-      <LabelForm>{label}</LabelForm>
-      <FormInput type="text" className="form-input" placeholder={placeholder} value={value} onChange={handleChange} />
-    </FormComponent>
+    <>
+      <FontPoppins />
+      <FormComponent>
+        <LabelForm>{label}</LabelForm>
+        <FormInput type="text" className="form-input" placeholder={placeholder} value={value} onChange={handleChange} />
+      </FormComponent>
+    </>
   );
 };
 
