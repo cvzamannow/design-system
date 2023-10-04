@@ -2,43 +2,208 @@ import { Meta, Typeset } from "@storybook/blocks";
 
 <Meta title="Stories/Typography/Typography" />
 
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+</style>
+
+export const typography = {
+  type: {
+    primary: "'Poppins', sans-serif",
+  },
+  weight: {
+    regular: '400',
+    medium: '500',
+    semi_bold: '600',
+    bold: '700',
+  },
+  size: {
+    h1: 32,
+    h2: 30,
+    h3: 28,
+    h4: 26,
+    h5: 24,
+    h6: 22,
+    h7: 20,
+    b1: 18,
+    b2: 16,
+    b3: 14,
+    c1: 12,
+    c2: 10,
+  },
+};
+
+export const SampleText = 'Lorem Vestia Zeta and Kobo Kanaeru.'
+
 # 📝Typography
 
 Standard Typography in CV Zaman Now
 
+**Font:** Poppins
 
-## Typography Regular
+**Weights:** 400(regular), 500(medium), 600(semi bold), 700(bold)
+
+- [Heading](#Heading)
+- [Body Text](#body)
+- [Caption](#caption)
+
+<hr />
+
+### Heading Regular
 <Typeset
-    title="Typography Regular"
-    fontSizes={["18px", "16px", "14px", "12px", "10px"]}
-    fontWeight="400"
-    sampleText="Vestia Zeta"
-    fontFamily="Helvetica"
+  fontSizes={[
+    Number(typography.size.h1),
+    Number(typography.size.h2),
+    Number(typography.size.h3),
+    Number(typography.size.h4),
+    Number(typography.size.h5),
+    Number(typography.size.h6),
+    Number(typography.size.h7),
+  ]}
+  fontWeight={typography.weight.regular}
+  sampleText={SampleText}
+  fontFamily={typography.type.primary}
 />
 
-## Typography Medium
+### Heading Medium
 <Typeset
-    title="Typography Regular"
-    fontSizes={["18px", "16px", "14px", "12px", "10px"]}
-    fontWeight="500"
-    sampleText="Vestia Zeta"
-    fontFamily="Helvetica"
+  fontSizes={[
+    Number(typography.size.h1),
+    Number(typography.size.h2),
+    Number(typography.size.h3),
+    Number(typography.size.h4),
+    Number(typography.size.h5),
+    Number(typography.size.h6),
+    Number(typography.size.h7),
+  ]}
+  fontWeight={typography.weight.medium}
+  sampleText={SampleText}
+  fontFamily={typography.type.primary}
 />
 
-## Typography Semi Bold
+### Heading Semi_Bold
 <Typeset
-    title="Typography Regular"
-    fontSizes={["18px", "16px", "14px", "12px", "10px"]}
-    fontWeight="600"
-    sampleText="Vestia Zeta"
-    fontFamily="Helvetica"
+  fontSizes={[
+    Number(typography.size.h1),
+    Number(typography.size.h2),
+    Number(typography.size.h3),
+    Number(typography.size.h4),
+    Number(typography.size.h5),
+    Number(typography.size.h6),
+    Number(typography.size.h7),
+  ]}
+  fontWeight={typography.weight.semi_bold}
+  sampleText={SampleText}
+  fontFamily={typography.type.primary}
 />
 
-## Typography Bold
+### Heading Bold
 <Typeset
-    title="Typography Regular"
-    fontSizes={["18px", "16px", "14px", "12px", "10px"]}
-    fontWeight="700"
-    sampleText="Vestia Zeta"
-    fontFamily="Helvetica"
+  fontSizes={[
+    Number(typography.size.h1),
+    Number(typography.size.h2),
+    Number(typography.size.h3),
+    Number(typography.size.h4),
+    Number(typography.size.h5),
+    Number(typography.size.h6),
+    Number(typography.size.h7),
+  ]}
+  fontWeight={typography.weight.bold}
+  sampleText={SampleText}
+  fontFamily={typography.type.primary}
+/>
+
+<hr />
+
+### Body Text Regular
+<Typeset
+  fontSizes={[
+    Number(typography.size.b1),
+    Number(typography.size.b2),
+    Number(typography.size.b3),
+  ]}
+  fontWeight={typography.weight.regular}
+  sampleText={SampleText}
+  fontFamily={typography.type.primary}
+/>
+
+### Body Text Medium
+<Typeset
+  fontSizes={[
+    Number(typography.size.b1),
+    Number(typography.size.b2),
+    Number(typography.size.b3),
+  ]}
+  fontWeight={typography.weight.medium}
+  sampleText={SampleText}
+  fontFamily={typography.type.primary}
+/>
+
+### Body Text Semi_Bold
+<Typeset
+  fontSizes={[
+    Number(typography.size.b1),
+    Number(typography.size.b2),
+    Number(typography.size.b3),
+  ]}
+  fontWeight={typography.weight.semi_bold}
+  sampleText={SampleText}
+  fontFamily={typography.type.primary}
+/>
+
+### Body Text Bold
+<Typeset
+  fontSizes={[
+    Number(typography.size.b1),
+    Number(typography.size.b2),
+    Number(typography.size.b3),
+  ]}
+  fontWeight={typography.weight.bold}
+  sampleText={SampleText}
+  fontFamily={typography.type.primary}
+/>
+
+<hr />
+
+### Caption Regular
+<Typeset
+  fontSizes={[
+    Number(typography.size.c1),
+    Number(typography.size.c2),
+  ]}
+  fontWeight={typography.weight.regular}
+  sampleText={SampleText}
+  fontFamily={typography.type.primary}
+/>
+
+### Caption Medium
+<Typeset
+  fontSizes={[
+    Number(typography.size.c1),
+    Number(typography.size.c2),
+  ]}
+  fontWeight={typography.weight.medium}
+  sampleText={SampleText}
+  fontFamily={typography.type.primary}
+/>
+
+### Caption Semi_Bold
+<Typeset
+  fontSizes={[
+    Number(typography.size.c1),
+    Number(typography.size.c2),
+  ]}
+  fontWeight={typography.weight.semi_bold}
+  sampleText={SampleText}
+  fontFamily={typography.type.primary}
+/>
+
+### Caption Bold
+<Typeset
+  fontSizes={[
+    Number(typography.size.c1),
+    Number(typography.size.c2),
+  ]}
+  fontWeight={typography.weight.bold}
+  sampleText={SampleText}
+  fontFamily={typography.type.primary}
 />

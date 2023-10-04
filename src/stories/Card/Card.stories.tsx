@@ -35,25 +35,6 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
-export const Preview: Story = {
-  args: {
-    content: [ 
-      <ContentText>
-        <p>Card Default</p>
-      </ContentText>
-      ],
-    card: "preview",
-    style: { height: "306px", width: "193px" },
-  },
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-    const testCard = await canvas.getByText('Card Default');
-    const testTypeCard = canvas.getByTestId('card-CardDefault');
-
-    await expect(testCard).toBeInTheDocument();
-    await expect(testTypeCard).toBeInTheDocument();
-  },
-};
 export const CardDefault: Story = {
   args: {
     content: [ 
@@ -74,25 +55,6 @@ export const CardDefault: Story = {
   },
 };
 
-CardDefault.parameters = {
-  docs: {
-    source: {
-      code: `
-      <Card
-      card="CardDefault"
-      content={[
-        <ContentText><p>Card Default</p></ContentText>
-      ]}
-      style={{
-        height: '306px',
-        width: '193px'
-      }}
-    ></Card>
-      `,
-    },
-  },
-};
-
 export const CardHover: Story = {
   args: {
     content: [ 
@@ -110,24 +72,5 @@ export const CardHover: Story = {
 
     await expect(testCard).toBeInTheDocument();
     await expect(testTypeCard).toBeInTheDocument();
-  },
-};
-
-CardHover.parameters = {
-  docs: {
-    source: {
-      code: `
-      <Card
-      card="CardHover"
-      content={[
-        <ContentText><p>Card Hover</p></ContentText>
-      ]}
-      style={{
-        height: '306px',
-        width: '193px'
-      }}
-    ></Card>
-      `,
-    },
   },
 };

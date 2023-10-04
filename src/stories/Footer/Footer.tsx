@@ -1,10 +1,11 @@
 import React from "react";
 import { FC } from "react";
-import logo from "../assets/cvzn/logo.svg";
+import logo from "../assets/image/logo.svg";
 import styled from "styled-components";
-import Instagram from "../assets/cvzn/Instagram.svg"
-import Facebook from "../assets/cvzn/Facebook.svg"
-import Twitter from "../assets/cvzn/Twitter.svg"
+import Instagram from "../assets/image/Instagram.svg"
+import Facebook from "../assets/image/Facebook.svg"
+import Twitter from "../assets/image/Twitter.svg"
+import FontPoppins from "../assets/font/Poppins";
 
 
 interface FooterProps {
@@ -30,6 +31,7 @@ interface FooterSectionProps {
 }
 
 const Section = styled.section`
+  font-family: 'Poppins', sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -223,6 +225,7 @@ export const Footer: FC<FooterProps> = ({
   copyrightText = `Copyright © ${new Date().getFullYear()} CV Zaman Now`, 
 }) => (
     <DivOuter1 data-testid="footer">
+    <FontPoppins />
     <DivOuter2 backgroundColor={backgroundColor}>
       <DivOuter3>
         <Section>

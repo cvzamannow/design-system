@@ -32,23 +32,6 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Preview: Story = {
-  args: {
-    Contents: [
-        <ContentContainer>Content</ContentContainer>
-    ],
-  },
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-    const testText = await canvas.getByText('Content');
-    const testIdContainer = canvas.getByTestId('container');
-
-    await expect(testText).toBeInTheDocument();
-    await expect(testIdContainer).toBeInTheDocument();
-    await expect(testText).toHaveStyle('background-color: #ffa724a4');
-  },
-};
-
 export const Grid1: Story = {
   args: {
     Contents: [
@@ -65,17 +48,3 @@ export const Grid1: Story = {
     await expect(testText).toHaveStyle('background-color: #ffa724a4');
   },
 };
-
-Grid1.parameters = {
-  docs: {
-    source: {
-      code:`
-      <Container
-  Contents={[
-    <ContentContainer>Content</ContentContainer>
-  ]}
- ></Container>
-      `
-    }
-  }
-}

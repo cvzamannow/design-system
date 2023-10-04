@@ -54,16 +54,6 @@ Default.play = async ({ canvasElement}) => {
   await expect(testText).toBeInTheDocument;
 };
 
-Default.parameters = {
-  docs: {
-    source: {
-      code:`
-      <Form label="Your text:"></Form>
-      `
-    }
-  }
-}
-
 // For the Placeholder Form
 export const WithPlaceholder: Story = {};
 WithPlaceholder.args = {
@@ -78,16 +68,3 @@ WithPlaceholder.play = async ({ canvasElement}) => {
   await expect(WPlaceholder).toBeInTheDocument;
   await expect(testText).toBeInTheDocument;
 };
-
-WithPlaceholder.parameters = {
-  docs: {
-    source: {
-      code: `
-      <Form
-  label="Your text:"
-  placeholder="Enter your Text..."
-></Form>
-      `
-    }
-  }
-}

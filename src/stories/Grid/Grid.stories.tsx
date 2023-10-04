@@ -60,6 +60,7 @@ export const Preview: Story = {
   args: {
     items: generateCardItems(4), // Ubah angka 4 sesuai dengan jumlah item yang Anda inginkan.
     columns: 2,
+    columnsMobile:1,
     gap: "4px",
   },
   play: async ({ canvasElement }) => {
@@ -77,6 +78,7 @@ export const Grid1: Story = {
   args: {
     items: generateCardItems(4), // Ubah angka 4 sesuai dengan jumlah item yang Anda inginkan.
     columns: 2,
+    columnsMobile:1,
     gap: "4px",
   },
   play: async ({ canvasElement }) => {
@@ -89,22 +91,3 @@ export const Grid1: Story = {
     }
   },
 };
-
-Grid1.parameters = {
-  docs: {
-    source: {
-      code: `
-      <Grid
-  columns={2}
-  gap="4px"
-  items={[
-    <Card key="card-0" card="CardHover" content={[<ContentText><p>Content 0</p></ContentText>]} data-testid="card-item" style={{height: '200px', width: '200px'}}></Card>,
-    <Card key="card-1" card="CardHover" content={[<ContentText><p>Content 1</p></ContentText>]} data-testid="card-item" style={{height: '200px', width: '200px'}}></Card>,
-    <Card key="card-2" card="CardHover" content={[<ContentText><p>Content 2</p></ContentText>]} data-testid="card-item" style={{height: '200px', width: '200px'}}></Card>,
-    <Card key="card-3" card="CardHover" content={[<ContentText><p>Content 3</p></ContentText>]} data-testid="card-item" style={{height: '200px', width: '200px'}}></Card>
-  ]}
-></Grid>
-      `
-    }
-  }
-}

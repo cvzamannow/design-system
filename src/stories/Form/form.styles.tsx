@@ -8,6 +8,8 @@ export const FormComponent = styled.form`
 
 // FormInput component
 export const FormInput = styled.input`
+  font-family: 'poppins', sans-serif;
+  color: #6B7280;
   background-color: #F3F4F6;
   padding: 10px;
   font-size: 16px;
@@ -25,7 +27,7 @@ export const FormInput = styled.input`
 
 // Label FormInput
 export const LabelForm = styled.label`
-  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'poppins', sans-serif;
   display: block;
   margin-bottom: 2px;
   color: #6B7280;

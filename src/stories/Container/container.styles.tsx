@@ -7,8 +7,11 @@ export interface ContainerProps {
     Contents: JSX.Element[];
 }
 
-export const StyledContainer = styled.div<ContainerProps>`
+export const BodyContainer = styled.div`
     width: 100%;
+`;
+
+export const StyledContainer = styled.div<ContainerProps>`
     padding: 0 120px;
     max-width: 1440px;
     margin: auto;
@@ -21,7 +24,7 @@ export const StyledContainer = styled.div<ContainerProps>`
 
 export const ContentContainer = styled.div`
     font-size: 40px;
-    font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'poppins', sans-serif;
     align-items: center;
     color: #000000b6;
     display: flex;

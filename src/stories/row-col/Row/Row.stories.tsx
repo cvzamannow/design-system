@@ -77,23 +77,3 @@ export const Row1: Story = {
   },
 };
 
-Row1.parameters = {
-  docs: {
-    source: {
-      code: `
-      <Row
-  items={[
-    <Card key="card-0" card="CardHover" content={[<ContentText><p>Content 0</p></ContentText>]} data-testid="row-item" style={{height: '200px', width: '200px'}}></Card>,
-    <Card key="card-1" card="CardHover" content={[<ContentText><p>Content 1</p></ContentText>]} data-testid="row-item" style={{height: '200px', width: '200px'}}></Card>,
-    <Card key="card-2" card="CardHover" content={[<ContentText><p>Content 2</p></ContentText>]} data-testid="row-item" style={{height: '200px', width: '200px'}}></Card>
-  ]}
-  style={{
-    gap: '3px',
-    justifyContent: 'center'
-  }}
-></Row>
-      `
-    }
-  }
-}
-

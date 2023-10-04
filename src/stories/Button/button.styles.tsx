@@ -1,35 +1,31 @@
 import styled from 'styled-components';
 
-const LabelStyled = styled.button`
+
+export const DisplayContent = styled.div`
+  display: inline-block;
+`;
+
+const ButtonStyled = styled.button`
   /* CSS styling for the "storybook-button" class */
   &.storybook-button {
     /* General style for Button */
-    font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
     border: 0;
     border-radius: 0px;
     cursor: pointer;
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     line-height: 1;
     transition: background-color 0.3s, box-shadow 0.3s; /* Add transition property */
   }
 
-  /* Style for small button size */
-  &.storybook-button--small {
-    font-size: 12px;
-    padding: 10px 16px;
-  }
 
   /* Style for medium button size */
   &.storybook-button--medium {
-    font-size: 14px;
-    padding: 11px 20px;
-  }
-
-  /* Style for large button size */
-  &.storybook-button--large {
-    font-size: 16px;
-    padding: 12px 24px;
+    font-size: 18px;
+    padding: 18px 16px;
   }
 
   /* Style for the primary button */
@@ -46,7 +42,7 @@ const LabelStyled = styled.button`
   &.storybook-button--secondary {
     color: #FFA824;
     background-color: transparent;
-    box-shadow: rgba(255, 168, 36, 0.445) 0px 0px 0px 1px inset;
+    box-shadow: rgb(255, 167, 36) 0px 0px 0px 1.5px inset;
 
     &:hover {
       opacity: 0.8;
@@ -63,7 +59,18 @@ const LabelStyled = styled.button`
       opacity: 0.8;
     }
   }
+
+  /* Style form the nol button */
+  &.storybook-button--text {
+    color: white;
+    background-color: transparent;
+    font-weight: 400;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
   /* Add another style if needed */
 `;
 
-export default LabelStyled;
+export default ButtonStyled;

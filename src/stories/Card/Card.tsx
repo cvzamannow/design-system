@@ -1,3 +1,4 @@
+import FontPoppins from "../assets/font/Poppins";
 import CardStyled from "./card.styles";
 
 interface CardProps {
@@ -17,9 +18,12 @@ interface CardProps {
 const Card = ({ card = "CardDefault", content, style, ...props }: CardProps) => {
 
   return (
-    <CardStyled data-testid={`card-${card}`} className={["storybook-card", `storybook-card--${card}`].join(" ")}  style={style} {...props}>
-      {content}
-    </CardStyled>
+    <> 
+      <FontPoppins />
+      <CardStyled data-testid={`card-${card}`} className={["storybook-card", `storybook-card--${card}`].join(" ")}  style={style} {...props}>
+        {content}
+      </CardStyled>
+    </>
   );
 };
 

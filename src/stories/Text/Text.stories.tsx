@@ -34,25 +34,14 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
-export const Preview: Story = {
-  args: {
-    size: "preview",
-    label: "preview",
-  },
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-    const testText = await canvas.getByText('extraSmall');
-    const testSize = canvas.getByTestId('label-size-extraSmall');
-
-    await expect(testText).toBeInTheDocument();
-    await expect(testSize).toBeInTheDocument();
-  },
-};
 
 export const ExtraSmall: Story = {
   args: {
     size: "extraSmall",
     label: "extraSmall",
+    style: {
+      color: "black",
+    },
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
@@ -64,23 +53,13 @@ export const ExtraSmall: Story = {
   },
 };
 
-ExtraSmall.parameters = {
-  docs: {
-    source: {
-      code: `
-      <Text
-  label="extraSmall"
-  size="extraSmall"
-></Text>
-      `
-    }
-  }
-}
-
 export const Small: Story = {
   args: {
     size: "small",
     label: "Small",
+    style: {
+      color: "black",
+    },
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
@@ -92,23 +71,13 @@ export const Small: Story = {
   },
 };
 
-Small.parameters = {
-  docs: {
-    source: {
-      code: `
-      <Text
-  label="Small"
-  size="small"
-></Text>
-      `
-    }
-  }
-}
-
 export const Normal: Story = {
   args: {
     size: "normal",
     label: "Normal",
+    style: {
+      color: "black",
+    },
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
@@ -120,23 +89,13 @@ export const Normal: Story = {
   },
 };
 
-Normal.parameters = {
-  docs: {
-    source: {
-      code: `
-      <Text
-      label="Normal"
-      size="normal"
-    ></Text>
-      `
-    }
-  }
-}
-
 export const Medium: Story = {
   args: {
     size: "medium",
     label: "Medium",
+    style: {
+      color: "black",
+    },
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
@@ -148,23 +107,13 @@ export const Medium: Story = {
   },
 };
 
-Medium.parameters = {
-  docs: {
-    source: {
-      code: `
-      <Text
-  label="Medium"
-  size="medium"
-></Text>
-      `
-    }
-  }
-}
-
 export const Large: Story = {
   args: {
     size: "large",
     label: "Large",
+    style: {
+      color: "black",
+    },
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
@@ -175,16 +124,3 @@ export const Large: Story = {
     await expect(testSize).toBeInTheDocument();
   },
 };
-
-Large.parameters = {
-  docs: {
-    source: {
-      code: `
-      <Text
-  label="Large"
-  size="large"
-></Text>
-      `
-    }
-  }
-}

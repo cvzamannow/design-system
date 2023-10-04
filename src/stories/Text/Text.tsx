@@ -9,14 +9,18 @@ interface TextProps {
    * contents
    */
   label: string;
+  /**
+   * additional style
+   */
+  style?: React.CSSProperties;
 }
 
 /**
  * Primary UI component for user interaction
  */
-const Text = ({ size = "normal", label, ...props }: TextProps) => {
+const Text = ({ size = "normal", label, style, ...props }: TextProps) => {
   return (
-    <TextStyled data-testid={`label-size-${size}`} className={["storybook-label", `storybook-label--${size}`].join(" ")} {...props}>
+    <TextStyled data-testid={`label-size-${size}`} className={["storybook-label", `storybook-label--${size}`].join(" ")} style={style} {...props}>
       {label}
     </TextStyled>
   );
