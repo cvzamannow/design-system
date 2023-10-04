@@ -74,4 +74,3 @@ export const CardHover: Story = {
     await expect(testTypeCard).toBeInTheDocument();
   },
 };
-

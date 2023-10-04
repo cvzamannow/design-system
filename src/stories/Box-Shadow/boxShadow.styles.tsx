@@ -55,8 +55,8 @@ export const ContentShadow = styled.div`
   p {
     margin: auto;
     color: #0000008a;
-    font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
   }
   
 `;

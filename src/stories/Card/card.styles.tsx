@@ -48,8 +48,8 @@ export const ContentText = styled.div`
   background-color: #D1D5DB;
 
   p {
-    font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    color: #000000e2;
+    font-family: 'poppins', sans-serif;
+    color: #000000b8;
     margin: auto;
   }
 

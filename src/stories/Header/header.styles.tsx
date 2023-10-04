@@ -1,18 +1,22 @@
 import styled from 'styled-components';
 
+export const HeaderNav = styled.header`
+  width: 100%;
+  background-color: #0D4A3E;
+`;
+
 const StorybookHeader = styled.div`
+    font-family: 'poppins', sans-serif;
   border-bottom: 1px solid #9CA3AF;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #0D4A3E;
   color: white;
-  width: 100%;
   padding: 0 120px;
   max-width: 1440px;
   margin: auto;
   @media screen and (max-width: 768px) {
-      width: 95%;
+      width: 100%;
       margin: auto;
       padding: 0;
   }
@@ -29,7 +33,7 @@ const StorybookHeader = styled.div`
     margin: 9px 0 6px 2px;
     display: inline-block;
     vertical-align: center;
-    font-family: poppins, sans-serif;
+    font-family: 'poppins', sans-serif;
   }
 
   button + button {
@@ -37,22 +41,15 @@ const StorybookHeader = styled.div`
     margin-right: 20px;
   }
 
-  .welcome {
-    color: white;
-    font-size: 14px;
-    margin-right: 10px;
-    font-family: poppins, sans-serif; /* Menggunakan font-family yang telah Anda definisikan */
-  }
-
-  .menu {
+  .menuItems {
+    font-family: 'poppins', sans-serif;
     margin-left: 0px;
     flex-grow: 1;
     display: flex;
     justify-content: center;
   }
 
-  .menu ul {
-    font-weight: 500;
+  .menuItems ul {
     margin: 0px 0px;
     font-size: 18px;
     margin-left: 0px;
@@ -60,16 +57,17 @@ const StorybookHeader = styled.div`
     display: flex;
   }
 
-  .menu li {
+  .menuItems li {
     display: flex;
     align-items: center;
-    /* background-color: #9CA3AF; */
     height: 90px;
     margin-right: 30px;
-    font-family: poppins, sans-serif; /* Menggunakan font-family yang telah Anda definisikan */
+    font-weight: 400;
+    font-family: 'poppins', sans-serif; 
   }
 
-  .menu .active {
+  .active {
+    font-weight: 500;
     border-bottom: solid 4px #FFA824;
     margin-bottom: -1px;
   }

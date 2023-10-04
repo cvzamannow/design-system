@@ -1,18 +1,20 @@
-import ButtonStyled from "./button.styles";
+import FontPoppins from "../assets/font/Poppins";
+import ButtonStyled, { DisplayContent } from "./button.styles";
 
-interface ButtonProps {
+export interface ButtonProps {
+  children?: "ReactNode";
   /**
    * Is this the principal call to action on the page?
    */
-  ButtonType?: "primary" | "secondary" | "nolo";
+  ButtonType?: "primary" | "secondary" | "nolo" | "text";
   /**
-   * What background color to use
+   * Additional style
    */
-  backgroundColor?: string;
+  style?: React.CSSProperties;
   /**
    * How large should the button be?
    */
-  size?: "small" | "medium" | "large";
+  size?: "medium";
   /**
    * Button contents
    */
@@ -26,12 +28,18 @@ interface ButtonProps {
 /**
  * Primary UI component for user interaction
  */
-const Button = ({ ButtonType = "primary", size = "medium", backgroundColor, label, ...props }: ButtonProps) => {
+const Button = ({ children, ButtonType = "primary", size = "medium", style, label, ...props }: ButtonProps) => {
   const mode = `storybook-button--${ButtonType}`;
   return (
-    <ButtonStyled type="button" data-testid={`button-size-${size}`} className={["storybook-button", `storybook-button--${size}`, mode].join(" ")} style={{ backgroundColor }} {...props}>
-      {label}
-    </ButtonStyled>
+    <>
+      <FontPoppins />
+      <DisplayContent>
+        <ButtonStyled type="button" data-testid={`button-size-${size}`} className={["storybook-button", `storybook-button--${size}`, mode].join(" ")} style={style}  {...props}>
+          {children}
+          {label}
+        </ButtonStyled>
+      </DisplayContent>
+    </>
   );
 };
 
