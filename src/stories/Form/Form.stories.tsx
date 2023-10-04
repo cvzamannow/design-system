@@ -31,18 +31,6 @@ const Meta = {
 export default Meta;
 type Story = StoryObj<typeof Meta>;
 
-// For Default Form
-export const Preview: Story = {};
-Preview.args = {
-  label: "Your text:",
-};
-Preview.play = async ({ canvasElement}) => {
-  const canvas = within(canvasElement);
-  const testText = await canvas.getByText('Your text:');
-
-  await expect(testText).toBeInTheDocument;
-};
-
 export const Default: Story = {};
 Default.args = {
   label: "Your text:",
