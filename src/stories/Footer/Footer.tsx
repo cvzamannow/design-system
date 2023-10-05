@@ -78,10 +78,12 @@ margin-top: 0; //8px
 @media (min-width: 768px) {
   .element {
     margin-top: 0;
+  }
+}
 `;
 
 const Div4 = styled.div`
-diplay: flex;
+display: flex;
 flex-direction: column;
 margin-top: 0;
 margin-bottom: 4px;
@@ -90,6 +92,8 @@ margin-bottom: 4px;
   .element {
     margin-top: 0;
     margin-bottom: 0;
+  }
+}
 `;
 
 const Div5 = styled.div`
@@ -137,7 +141,7 @@ margin-left:20px;
 
 const P = styled.p`
 font-weight: 400;
-font-size; 16px;
+font-size: 16px;
 color: #D1D5DB;
 line-height: 30.8px;
 margin-top: 8px;
@@ -145,7 +149,7 @@ max-width: 312px;
 `;
 const P1 = styled.p`
 font-weight: 400;
-font-size; 16px;
+font-size: 16px;
 color: #D1D5DB;
 line-height: 30.8px;
 margin-top: 4px;
@@ -162,7 +166,7 @@ const P2 = styled.p`
 
 const H1 = styled.h1`
 font-weight: 400;
-font-size; 16px;
+font-size: 16px;
 color: white;
 line-height: 30.8px;
 margin-top: 40px;
@@ -199,6 +203,7 @@ color: white;
 &:hover {
   color: white; 
   cursor: pointer;
+}
 `;
 const LastDiv = styled.div`
   width: 100%;
