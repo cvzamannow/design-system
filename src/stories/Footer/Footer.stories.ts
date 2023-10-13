@@ -8,7 +8,7 @@ const meta = {
   title: "Stories/Footer",
   component: Footer,
   parameters: {
-    layout: "centered",
+    layout: "fullscreen",
   },
   tags: ["autodocs"],
   argTypes: {
