@@ -31,16 +31,6 @@ Storybook allows us to visualize and interact with these components separately f
      ```bash
      cd design-system
 
-3. Install dependencies:
-
-     ```bash
-    npm install
-
-4. Delete package-lock.json:
-
-     ```bash
-    rm ./package-lock.json
-
 3. Install yarn:
 
      ```bash
@@ -62,7 +52,7 @@ We really appreciate contributions from the community! If you wish to contribute
 2. Create a new feature branch:
 
     ```bash
-    git checkout -b new-features
+    git checkout -B new-features
 
 3. Make the necessary changes and commit:
 
