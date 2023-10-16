@@ -1,14 +1,19 @@
+import FontPoppins from "../assets/font/Poppins";
 import TextStyled from "./Text.styles";
 
 interface TextProps {
   /**
-   * How large should the Label be?
+   * How large should the Text be?
    */
-  size?: "preview" | "extraSmall" | "small" | "normal" | "medium" | "large";
+  size?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "h7" | "b1" | "b2" | "b3" | "c1" | "c2";
+  /**
+   * 
+   */
+  type?: "regular" | "medium" | "semiBold" | "bold" ;
   /**
    * contents
    */
-  label: string;
+  text: string;
   /**
    * additional style
    */
@@ -18,11 +23,14 @@ interface TextProps {
 /**
  * Primary UI component for user interaction
  */
-const Text = ({ size = "normal", label, style, ...props }: TextProps) => {
+const Text = ({ size, type= "regular", text, style, ...props }: TextProps) => {
   return (
-    <TextStyled data-testid={`label-size-${size}`} className={["storybook-label", `storybook-label--${size}`].join(" ")} style={style} {...props}>
-      {label}
-    </TextStyled>
+    <>
+      <FontPoppins />
+      <TextStyled data-testid={`text-size-${size}`} className={["storybook-text", `storybook-text--${size}`, `storybook-text--${type}`].join(" ")} style={style} {...props}>
+        {text}
+      </TextStyled>
+    </>
   );
 };
 

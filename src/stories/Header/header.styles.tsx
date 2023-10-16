@@ -1,12 +1,15 @@
 import styled from 'styled-components';
 
 export const HeaderNav = styled.header`
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
   width: 100%;
   background-color: #0D4A3E;
 `;
 
 const StorybookHeader = styled.div`
-    font-family: 'poppins', sans-serif;
+  font-family: 'poppins', sans-serif;
   border-bottom: 1px solid #9CA3AF;
   display: flex;
   align-items: center;
