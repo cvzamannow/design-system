@@ -1,0 +1,50 @@
+import { Meta, Title, ColorPalette, ColorItem } from '@storybook/blocks';
+import FontPoppins from "../assets/font/Poppins";
+import TableShadow from "./boxShadow.styles.tsx";
+import shadowBase from "./boxShadow.styles.tsx";
+
+<Meta title="Stories/Box-Shadow/Box-Shadow" />
+<FontPoppins />
+# ◼️Box-Shadows
+
+Standard Box-Shadow in CV Zaman Now
+
+---
+
+<TableShadow>
+  <tr>
+    <th>Example</th>
+    <th>Description</th>
+    <th>Code</th>
+  </tr>
+  <tr>
+    <td><div class="shadowBase"></div></td>
+    <td>Shadow Base</td>
+    <td>rgba(0, 0, 0, 0.24) 0px 3px 8px</td>
+  </tr>
+  <tr>
+    <td><div class="shadowMd"></div></td>
+    <td>Shadow Md</td>
+    <td>rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px</td>
+  </tr>
+  <tr>
+    <td><div class="shadowLg"></div></td>
+    <td>Shadow Lg</td>
+    <td>rgba(136, 165, 191, 0.509) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px</td>
+  </tr>
+  <tr>
+    <td><div class="shadowXl"></div></td>
+    <td>Shadow Xl</td>
+    <td>rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px</td>
+  </tr>
+  <tr>
+    <td><div class="shadowXxl"></div></td>
+    <td>Shadow Xxl </td>
+    <td>rgba(0, 0, 0, 0.4) 0px 30px 90px</td>
+  </tr>
+  <tr>
+    <td><div class="shadowInner"></div></td>
+    <td>Shadow Inner</td>
+    <td>rgba(0, 0, 0, 0.061) 0px 4px 12px 0px inset</td>
+  </tr>
+</TableShadow>

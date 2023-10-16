@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const LabelStyled = styled.p`
   /* CSS styling for the "storybook-label" class */
   &.storybook-label {
-    font-family: sans-serif;
+    font-family: 'poppins', sans-serif;
     font-size: 14px;
   }
 
