@@ -41,8 +41,10 @@ jobs:
           rm package-lock.json
           yarn install
 
-      - name: Install Playwright
-        run: npx playwright install --with-deps
+      - name: Install Playwright & test sb
+        run: |
+          yarn playwright install
+          yarn test-storybook
 
       - name: Run Test Eslint
         run: yarn lint

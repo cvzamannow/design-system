@@ -39,7 +39,7 @@ type Story = StoryObj<typeof meta>;
 
 // Heading
 
-export const h1: Story = {
+export const H1: Story = {
   args: {
     type: "regular",
     size: "h1",
@@ -58,7 +58,7 @@ export const h1: Story = {
   },
 };
 
-export const h2: Story = {
+export const H2: Story = {
   args: {
     type: "regular",
     size: "h2",
@@ -77,7 +77,7 @@ export const h2: Story = {
   },
 };
 
-export const h3: Story = {
+export const H3: Story = {
   args: {
     type: "regular",
     size: "h3",
@@ -96,7 +96,7 @@ export const h3: Story = {
   },
 };
 
-export const h4: Story = {
+export const H4: Story = {
   args: {
     type: "regular",
     size: "h4",
@@ -115,7 +115,7 @@ export const h4: Story = {
   },
 };
 
-export const h5: Story = {
+export const H5: Story = {
   args: {
     type: "regular",
     size: "h5",
@@ -134,7 +134,7 @@ export const h5: Story = {
   },
 };
 
-export const h6: Story = {
+export const H6: Story = {
   args: {
     type: "regular",
     size: "h6",
@@ -153,7 +153,7 @@ export const h6: Story = {
   },
 };
 
-export const h7: Story = {
+export const H7: Story = {
   args: {
     type: "regular",
     size: "h7",
@@ -174,7 +174,7 @@ export const h7: Story = {
 
 // Body Text
 
-export const b1: Story = {
+export const B1: Story = {
   args: {
     type: "regular",
     size: "b1",
@@ -193,7 +193,7 @@ export const b1: Story = {
   },
 };
 
-export const b2: Story = {
+export const B2: Story = {
   args: {
     type: "regular",
     size: "b2",
@@ -212,7 +212,7 @@ export const b2: Story = {
   },
 };
 
-export const b3: Story = {
+export const B3: Story = {
   args: {
     type: "regular",
     size: "b3",
@@ -233,7 +233,7 @@ export const b3: Story = {
 
 // Caption
 
-export const c1: Story = {
+export const C1: Story = {
   args: {
     type: "regular",
     size: "c1",
@@ -252,7 +252,7 @@ export const c1: Story = {
   },
 };
 
-export const c2: Story = {
+export const C2: Story = {
   args: {
     type: "regular",
     size: "c2",
