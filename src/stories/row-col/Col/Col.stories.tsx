@@ -58,22 +58,6 @@ const generateCardItems = (count: number) => {
 };
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
-export const Preview: Story = {
-  args: {
-    items: generateCardItems(3),
-    style: { gap: "3px"},
-  },
-  // play: async ({ canvasElement }) => {
-  //   const canvas = within(canvasElement);
-  //   const cardItems = canvas.getAllByTestId("col-item"); // Menambahkan atribut test id pada Card element
-
-  //   for (let i = 0; i < cardItems.length; i++) {
-  //     const contentText = await canvas.findByText(`Content ${i}`);
-  //     expect(contentText).toBeInTheDocument();
-  //   }
-  // },
-};
-
 export const Col1: Story = {
   args: {
     items: generateCardItems(3),

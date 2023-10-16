@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Title, Description, Subtitle, Stories, Primary as PrimaryDocBlock, Controls} from "@storybook/blocks"
-import { within } from '@storybook/testing-library';
+import { Title, Description, Subtitle, Stories, Primary as PrimaryDocBlock, Controls } from "@storybook/blocks";
+import { within } from "@storybook/testing-library";
 import { expect } from "@storybook/jest";
 
 import Text from "./Text";
@@ -14,16 +14,18 @@ const meta = {
     layout: "centered",
     componentSubtitle: "'Component Text",
     docs: {
-      page: () => <>
-        <Title />
-        <Description />
-        <Subtitle />
+      page: () => (
+        <>
+          <Title />
+          <Description />
+          <Subtitle />
 
-        <PrimaryDocBlock />
-        <Controls />
+          <PrimaryDocBlock />
+          <Controls />
 
-        <Stories />
-      </>,
+          <Stories />
+        </>
+      ),
     },
   },
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/react/writing-docs/autodocs
@@ -35,90 +37,234 @@ type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 
-export const ExtraSmall: Story = {
+// Heading
+
+export const H1: Story = {
   args: {
-    size: "extraSmall",
-    label: "extraSmall",
+    type: "regular",
+    size: "h1",
+    text: "Your custom text example",
     style: {
       color: "black",
     },
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
-    const testText = await canvas.getByText('extraSmall');
-    const testSize = canvas.getByTestId('label-size-extraSmall');
+    const testText = await canvas.getByText("Your custom text example");
+    const testSize = canvas.getByTestId("text-size-h1");
 
     await expect(testText).toBeInTheDocument();
     await expect(testSize).toBeInTheDocument();
   },
 };
 
-export const Small: Story = {
+export const H2: Story = {
   args: {
-    size: "small",
-    label: "Small",
+    type: "regular",
+    size: "h2",
+    text: "Your custom text example",
     style: {
       color: "black",
     },
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
-    const testText = await canvas.getByText('Small');
-    const testSize = canvas.getByTestId('label-size-small');
+    const testText = await canvas.getByText("Your custom text example");
+    const testSize = canvas.getByTestId("text-size-h2");
 
     await expect(testText).toBeInTheDocument();
     await expect(testSize).toBeInTheDocument();
   },
 };
 
-export const Normal: Story = {
+export const H3: Story = {
   args: {
-    size: "normal",
-    label: "Normal",
+    type: "regular",
+    size: "h3",
+    text: "Your custom text example",
     style: {
       color: "black",
     },
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
-    const testText = await canvas.getByText('Normal');
-    const testSize = canvas.getByTestId('label-size-normal');
+    const testText = await canvas.getByText("Your custom text example");
+    const testSize = canvas.getByTestId("text-size-h3");
 
     await expect(testText).toBeInTheDocument();
     await expect(testSize).toBeInTheDocument();
   },
 };
 
-export const Medium: Story = {
+export const H4: Story = {
   args: {
-    size: "medium",
-    label: "Medium",
+    type: "regular",
+    size: "h4",
+    text: "Your custom text example",
     style: {
       color: "black",
     },
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
-    const testText = await canvas.getByText('Medium');
-    const testSize = canvas.getByTestId('label-size-medium');
+    const testText = await canvas.getByText("Your custom text example");
+    const testSize = canvas.getByTestId("text-size-h4");
 
     await expect(testText).toBeInTheDocument();
     await expect(testSize).toBeInTheDocument();
   },
 };
 
-export const Large: Story = {
+export const H5: Story = {
   args: {
-    size: "large",
-    label: "Large",
+    type: "regular",
+    size: "h5",
+    text: "Your custom text example",
     style: {
       color: "black",
     },
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
-    const testText = await canvas.getByText('Large');
-    const testSize = canvas.getByTestId('label-size-large');
+    const testText = await canvas.getByText("Your custom text example");
+    const testSize = canvas.getByTestId("text-size-h5");
+
+    await expect(testText).toBeInTheDocument();
+    await expect(testSize).toBeInTheDocument();
+  },
+};
+
+export const H6: Story = {
+  args: {
+    type: "regular",
+    size: "h6",
+    text: "Your custom text example",
+    style: {
+      color: "black",
+    },
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const testText = await canvas.getByText("Your custom text example");
+    const testSize = canvas.getByTestId("text-size-h6");
+
+    await expect(testText).toBeInTheDocument();
+    await expect(testSize).toBeInTheDocument();
+  },
+};
+
+export const H7: Story = {
+  args: {
+    type: "regular",
+    size: "h7",
+    text: "Your custom text example",
+    style: {
+      color: "black",
+    },
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const testText = await canvas.getByText("Your custom text example");
+    const testSize = canvas.getByTestId("text-size-h7");
+
+    await expect(testText).toBeInTheDocument();
+    await expect(testSize).toBeInTheDocument();
+  },
+};
+
+// Body Text
+
+export const B1: Story = {
+  args: {
+    type: "regular",
+    size: "b1",
+    text: "Your custom text example",
+    style: {
+      color: "black",
+    },
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const testText = await canvas.getByText("Your custom text example");
+    const testSize = canvas.getByTestId("text-size-b1");
+
+    await expect(testText).toBeInTheDocument();
+    await expect(testSize).toBeInTheDocument();
+  },
+};
+
+export const B2: Story = {
+  args: {
+    type: "regular",
+    size: "b2",
+    text: "Your custom text example",
+    style: {
+      color: "black",
+    },
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const testText = await canvas.getByText("Your custom text example");
+    const testSize = canvas.getByTestId("text-size-b2");
+
+    await expect(testText).toBeInTheDocument();
+    await expect(testSize).toBeInTheDocument();
+  },
+};
+
+export const B3: Story = {
+  args: {
+    type: "regular",
+    size: "b3",
+    text: "Your custom text example",
+    style: {
+      color: "black",
+    },
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const testText = await canvas.getByText("Your custom text example");
+    const testSize = canvas.getByTestId("text-size-b3");
+
+    await expect(testText).toBeInTheDocument();
+    await expect(testSize).toBeInTheDocument();
+  },
+};
+
+// Caption
+
+export const C1: Story = {
+  args: {
+    type: "regular",
+    size: "c1",
+    text: "Your custom text example",
+    style: {
+      color: "black",
+    },
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const testText = await canvas.getByText("Your custom text example");
+    const testSize = canvas.getByTestId("text-size-c1");
+
+    await expect(testText).toBeInTheDocument();
+    await expect(testSize).toBeInTheDocument();
+  },
+};
+
+export const C2: Story = {
+  args: {
+    type: "regular",
+    size: "c2",
+    text: "Your custom text example",
+    style: {
+      color: "black",
+    },
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const testText = await canvas.getByText("Your custom text example");
+    const testSize = canvas.getByTestId("text-size-c2");
 
     await expect(testText).toBeInTheDocument();
     await expect(testSize).toBeInTheDocument();
