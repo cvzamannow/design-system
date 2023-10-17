@@ -2,7 +2,6 @@ export { default as Button } from './src/stories/Button/Button';
 export { default as Header } from './src/stories/Header/Header';
 export { default as Form } from './src/stories/Form/Form';
 export { default as Card } from './src/stories/Card/Card';
-export { default as Shadow } from './src/stories/Box-Shadow/BoxShadow';
 export { default as Grid } from './src/stories/Grid/Grid';
 export { default as Row } from './src/stories/row-col/Row/Row';
 export { default as Col } from './src/stories/row-col/Col/Col';
