@@ -8,3 +8,4 @@ export { default as Col } from './src/stories/row-col/Col/Col';
 export { default as Label } from './src/stories/Label/Label';
 export { default as Text } from './src/stories/Text/Text';
 export { default as Container } from './src/stories/Container/Container';
+export { default as LoaderSpinner } from './src/stories/Loader-Spinner/LoaderSpinner';

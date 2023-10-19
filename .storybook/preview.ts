@@ -6,7 +6,6 @@ const lightTheme = create({
   appBg: "#FFFBEB",
   colorPrimary: "#0D4A3E",
   colorSecondary: "#34D399",
-  // barBg: "#FFFBEB",
   appBorderRadius: 8,
   appBorderColor: '#FFA824',
   brandImage: "https://github.com/Roid-obi/logo-cvzn-ds/blob/main/front-end-cvzn.png?raw=true",
@@ -21,7 +20,6 @@ const darkTheme = create({
   appBorderColor: '#3D6E65',
   brandImage: "https://github.com/Roid-obi/logo-cvzn-ds/blob/main/front-end-cvzn.png?raw=true",
   brandTitle: 'CV Zaman Now',
-  // appContentBg: "3F3F3F",
 });
 
 const preview: Preview = {
