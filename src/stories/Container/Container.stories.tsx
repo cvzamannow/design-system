@@ -8,7 +8,7 @@ import Container from "./Container";
 import { ContentContainer } from "./container.styles";
 
 const meta = {
-  title: "Stories/Container",
+  title: "Components/Container",
   component: Container,
   tags: ["autodocs"],
   parameters: {
