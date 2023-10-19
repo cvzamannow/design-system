@@ -5,7 +5,7 @@ import { expect } from "@storybook/jest";
 import { Footer } from "./Footer";
 
 const meta = {
-  title: "Stories/Footer",
+  title: "Components/Footer",
   component: Footer,
   parameters: {
     layout: "fullscreen",

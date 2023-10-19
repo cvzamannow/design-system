@@ -4,7 +4,7 @@ import Header from "./Header";
 import Button from "../Button/Button";
 
 const meta = {
-  title: "Stories/Header",
+  title: "Components/Header",
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
     backgroundColor: { control: "color" },
