@@ -5,7 +5,7 @@ import { within } from "@storybook/testing-library";
 import { expect } from "@storybook/jest";
 
 const Meta = {
-  title: "Stories/Form",
+  title: "Components/Form",
   component: Form,
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/react/writing-docs/autodocs
   tags: ["autodocs"],

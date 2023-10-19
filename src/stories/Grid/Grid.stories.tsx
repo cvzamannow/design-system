@@ -9,7 +9,7 @@ import Card from "../Card/Card";
 import { ContentText } from "../Card/card.styles";
 
 const meta = {
-  title: "Stories/Grid",
+  title: "Components/Grid",
   component: Grid,
   tags: ["autodocs"],
   parameters: {
