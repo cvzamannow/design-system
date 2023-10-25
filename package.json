@@ -1,7 +1,7 @@
 {
-  "name": "@cvzamannow/uikit",
+  "name": "@cvzamannow/uikit-docs",
   "private": false,
-  "version": "0.0.8",
+  "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
